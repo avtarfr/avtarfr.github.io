@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae & Coursework | Sumangalam Avtar Sharma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-ambient-glow"></div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-indicator emerald"></span>
+        Sumangalam Avtar Sharma
+      </a>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Research & Writeups</a>
+        <a href="cv.html" class="active">CV & Coursework</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-wrapper">
+    <div class="cv-title-bar">
+      <div>
+        <h1>Curriculum Vitae</h1>
+        <p class="subtitle">Sumangalam Avtar Sharma &bull; IISER Pune</p>
+      </div>
+      <div class="cv-direct-actions">
+        <a href="assets/cv.pdf" target="_blank" class="btn btn-emerald">Open PDF in New Tab</a>
+        <a href="assets/cv.pdf" download class="btn btn-ghost">Download PDF</a>
+      </div>
+    </div>
+
+    <!-- Official PDF Embed Element -->
+    <section class="pdf-viewer-module">
+      <div class="pdf-module-header">
+        <span class="font-mono" style="font-size: 0.8rem; color: var(--text-muted);">
+          Embedded Document: <code>website/assets/cv.pdf</code>
+        </span>
+      </div>
+      <object data="assets/cv.pdf" type="application/pdf" class="pdf-frame">
+        <div class="pdf-fallback-box">
+          <p>Inline PDF viewer unavailable in this environment.</p>
+          <a href="assets/cv.pdf" class="btn btn-emerald">Download CV Document</a>
+          <p class="subtext" style="margin-top: 0.6rem;">Drop your CV file at <code>website/assets/cv.pdf</code>.</p>
+        </div>
+      </object>
+    </section>
+
+    <!-- Relevant Coursework Breakdown (Strictly No Grades, No CGPA) -->
+    <section class="section" id="coursework">
+      <div class="section-label">
+        <span class="label-indicator purple"></span>
+        <span>ACADEMIC FOUNDATIONS & COURSE RECORD</span>
+      </div>
+      
+      <h2>Relevant Academic Coursework</h2>
+      <p class="section-summary">
+        Core and advanced undergraduate coursework completed or underway at IISER Pune, relevant to 
+        mathematical modelling, atmospheric dynamics, and computational data science.
+      </p>
+
+      <div class="coursework-quad-grid">
+        <!-- Advanced Data Science & Computation -->
+        <div class="course-panel border-purple">
+          <div class="course-panel-header">
+            <span class="pill pill-purple">Advanced & Data Science</span>
+          </div>
+          <ul class="course-entries">
+            <li><span class="code">DS4144</span> Deep Learning</li>
+            <li><span class="code">DS4233</span> Time Series Analysis</li>
+            <li><span class="code">DS4244</span> Bayesian Theory and Practice</li>
+            <li><span class="code">TD2223</span> Data Analysis</li>
+            <li><span class="code">TD1113</span> Introduction to Computing</li>
+          </ul>
+        </div>
+
+        <!-- Climate & Atmospheric Physics -->
+        <div class="course-panel border-cyan">
+          <div class="course-panel-header">
+            <span class="pill pill-cyan">Atmospheric & Climate Physics</span>
+          </div>
+          <ul class="course-entries">
+            <li><span class="code">EC3124</span> Physics of the Atmosphere</li>
+            <li><span class="code">EC2213</span> Principles of Planetary Climate</li>
+            <li><span class="code">EC2113</span> Introduction to Climate Science</li>
+            <li><span class="code">EC1223</span> The Solid Earth</li>
+            <li><span class="code">EC1213</span> Evolution of Earth and Life</li>
+          </ul>
+        </div>
+
+        <!-- Pure & Foundational Mathematics -->
+        <div class="course-panel border-emerald">
+          <div class="course-panel-header">
+            <span class="pill pill-emerald">Pure & Foundational Mathematics</span>
+          </div>
+          <ul class="course-entries">
+            <li><span class="code">MT2113</span> Introduction to Probability</li>
+            <li><span class="code">MT2223</span> Real Analysis I</li>
+            <li><span class="code">MT3124</span> Real Analysis II</li>
+            <li><span class="code">MT3134</span> Point Set Topology</li>
+            <li><span class="code">MT1223</span> Linear Algebra</li>
+            <li><span class="code">MT1113</span> Calculus I</li>
+            <li><span class="code">MT1213</span> Calculus II</li>
+            <li><span class="code">MT2213</span> Group Theory</li>
+            <li><span class="code">MT2233</span> Discrete Structures</li>
+            <li><span class="code">MT2133</span> Introduction to Proofs</li>
+          </ul>
+        </div>
+
+        <!-- Classical & Statistical Physics -->
+        <div class="course-panel border-amber">
+          <div class="course-panel-header">
+            <span class="pill pill-amber">Classical & Statistical Physics</span>
+          </div>
+          <ul class="course-entries">
+            <li><span class="code">PH2213</span> Classical Mechanics</li>
+            <li><span class="code">PH2223</span> Thermal & Statistical Physics</li>
+            <li><span class="code">PH2123</span> Mathematical Methods for Physics</li>
+            <li><span class="code">PH1113</span> Introductory Mechanics</li>
+            <li><span class="code">PH2113</span> Introductory Quantum Physics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Co-Curricular Positions -->
+    <section class="section">
+      <div class="section-label">
+        <span class="label-indicator emerald"></span>
+        <span>LEADERSHIP & SERVICE</span>
+      </div>
+
+      <div class="dual-feature-grid">
+        <div class="feature-card">
+          <span class="pill pill-emerald">Maths Club &bull; IISER Pune</span>
+          <h3>Coordinator (Jul 2025 - Present)</h3>
+          <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.92rem;">
+            Engineered automated Discord puzzle engines for the campus Treasure Hunt event. 
+            Organized Pi-Week lectures, coordinated technical talks, and authored contest problem sets 
+            covering probability theory and analysis.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="pill pill-purple">Science Communication</span>
+          <h3>Mimamsa Science Competition</h3>
+          <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.92rem;">
+            Served on the Physics question creation team for collegiate rounds. Presented an experimental 
+            demonstration at SciCon detailing string vibration physics and electromagnetic pickups in electric guitars.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <p>Sumangalam Avtar Sharma &bull; IISER Pune</p>
+      <a href="index.html">Return to Overview</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research & Projects | Sumangalam Avtar Sharma</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+  <div class="site-ambient-glow"></div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-indicator emerald"></span>
+        Sumangalam Avtar Sharma
+      </a>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="projects.html" class="active">Research & Writeups</a>
+        <a href="cv.html">CV & Coursework</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-wrapper">
+    <div class="page-intro">
+      <h1>Research & Modelling Projects</h1>
+      <p class="subtitle">Systematic studies in dynamical parameterizations, atmospheric variability, and statistical modeling.</p>
+    </div>
+
+    <!-- Project 1 with direct link to dedicated deep dive -->
+    <article class="project-entry-card border-purple">
+      <div class="entry-header">
+        <div>
+          <div class="badge-cluster">
+            <span class="pill pill-purple">Active Research</span>
+            <span class="pill pill-muted">Dynamical Systems</span>
+          </div>
+          <h2>Parameterization of Lorenz-96 and Testing Online Stability Against Training Data Volume</h2>
+        </div>
+        <span class="meta-date font-mono">Aug 2026 - Present &bull; Independent</span>
+      </div>
+
+      <p class="entry-abstract">
+        Evaluating the minimum training data volume required for a data-driven subgrid coupling parameterization 
+        $U_k$ to remain bounded, physically consistent, and free of climate drift when coupled online into the 
+        reduced Lorenz-96 single-layer equations.
+      </p>
+
+      <div class="equation-container">
+        <button class="copy-latex" data-tex="\\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - U_k(X)">Copy LaTeX</button>
+        $$\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - U_k(X)$$
+      </div>
+
+      <div class="entry-bullets">
+        <ul>
+          <li>Replicated base configurations from M&sup2;LInES multi-scale climate notebooks.</li>
+          <li>Executed systematic volume sweeps over 10 distinct sample-size tiers across two activation architectures.</li>
+          <li>Trained 20 individual neural network parameterizations to chart offline $R^2$ performance against online orbit boundedness.</li>
+        </ul>
+      </div>
+
+      <div class="entry-actions">
+        <a href="writeups/lorenz96.html" class="btn btn-purple">Open Technical Deep Dive &rarr;</a>
+        <a href="https://github.com/avtarfr" target="_blank" class="btn btn-ghost">Repository &nearr;</a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-entry-card border-cyan">
+      <div class="entry-header">
+        <div>
+          <div class="badge-cluster">
+            <span class="pill pill-cyan">Research & Training</span>
+            <span class="pill pill-muted">ISI Kolkata &bull; IDEAS-TIH</span>
+          </div>
+          <h2>Impact of ENSO on Rainfall Variability Across Major Kharif Crop States</h2>
+        </div>
+        <span class="meta-date font-mono">May 2026 - Jul 2026</span>
+      </div>
+
+      <p class="entry-abstract">
+        Constructed a spatial interpolation method over IMD precipitation datasets to achieve higher spatial resolution 
+        for seasonal monsoon analysis. Automated per-state analytical pipelines via Google Cloud APIs and evaluated 
+        ENSO Sensitivity Indices across agricultural growing regions.
+      </p>
+
+      <div class="entry-bullets">
+        <ul>
+          <li>Carried out exploratory data analysis on multi-decadal Indian Meteorological Department precipitation records.</li>
+          <li>Formulated spatial interpolation schemes to generate dense rainfall grids.</li>
+          <li>Architected modular Python scripts integrated with Google Cloud APIs to automate data collation per state.</li>
+          <li>Computed ENSO Sensitivity Indices and Classification Balance metrics to quantify regional agricultural vulnerabilities.</li>
+        </ul>
+      </div>
+
+      <div class="entry-actions">
+        <a href="https://github.com/avtarfr" target="_blank" class="btn btn-cyan">Repository &nearr;</a>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project-entry-card border-amber">
+      <div class="entry-header">
+        <div>
+          <div class="badge-cluster">
+            <span class="pill pill-amber">Research Project</span>
+            <span class="pill pill-muted">Problem Solvers Lab &bull; IISER Pune</span>
+          </div>
+          <h2>Patterns of Reasoning and Factors of Growth</h2>
+        </div>
+        <span class="meta-date font-mono">Jun 2026 - Jul 2026</span>
+      </div>
+
+      <p class="entry-abstract">
+        Investigated reasoning sequences and cognitive leaps during complex pattern recognition problems, 
+        synthesizing an empirical rubric to measure individual problem-solving workflows.
+      </p>
+
+      <div class="entry-bullets">
+        <ul>
+          <li>Conducted systematic literature reviews surveying historical frameworks in pattern analysis.</li>
+          <li>Executed iterative data cleaning, restructuring, and schema validation on empirical telemetry.</li>
+          <li>Synthesized a formal conceptual model classifying inferential trajectories during puzzle tasks.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project-entry-card border-emerald">
+      <div class="entry-header">
+        <div>
+          <div class="badge-cluster">
+            <span class="pill pill-emerald">Mentorship Program</span>
+            <span class="pill pill-muted">UC Berkeley &bull; REYES</span>
+          </div>
+          <h2>Statistical Instrument on Circular Economy</h2>
+        </div>
+        <span class="meta-date font-mono">Jun 2025 - Oct 2025</span>
+      </div>
+
+      <p class="entry-abstract">
+        Evaluated public awareness, institutional metrics, and implementation trends regarding Circular Economy 
+        frameworks through high-sample survey analysis and extensive literature extraction.
+      </p>
+
+      <div class="entry-bullets">
+        <ul>
+          <li>Surveyed over 1,000 respondents to quantify public baseline knowledge.</li>
+          <li>Synthesized data across an academic corpus of over 300 peer-reviewed articles.</li>
+          <li>Applied linear regression, ANOVA models, and hypothesis testing in R and Python.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <p>Sumangalam Avtar Sharma &bull; IISER Pune</p>
+      <a href="index.html">Return to Overview</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

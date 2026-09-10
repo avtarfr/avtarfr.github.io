@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumangalam Avtar Sharma | Climate Dynamics & Stochastic Modelling</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+</head>
+<body>
+  <div class="site-ambient-glow"></div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-indicator emerald"></span>
+        Sumangalam Avtar Sharma
+      </a>
+      <nav>
+        <a href="index.html" class="active">Overview</a>
+        <a href="projects.html">Research & Writeups</a>
+        <a href="cv.html">CV & Coursework</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Asymmetric Split Hero -->
+    <section class="hero-split container">
+      <div class="hero-bio-col">
+        <div class="identity-badge">
+          <span class="pulse-dot emerald"></span>
+          <span>IISER Pune &bull; BS-MS Mathematics</span>
+        </div>
+        
+        <h1 class="hero-title">Sumangalam Avtar Sharma</h1>
+        <p class="hero-tagline">Mathematical Modelling &bull; Stochastic Climate Dynamics &bull; Subgrid Closures</p>
+        
+        <p class="hero-text">
+          Undergraduate researcher focusing on non-linear dynamical systems, reduced-order modelling, 
+          and data-driven parameterizations. Currently studying the boundary where subgrid neural closures 
+          transition from offline accuracy to long-horizon online stability.
+        </p>
+
+        <div class="hero-action-buttons">
+          <a href="projects.html" class="btn btn-emerald">Research Writeups</a>
+          <a href="cv.html" class="btn btn-ghost">Academic CV</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+
+        <div class="hero-meta-strip">
+          <div class="meta-block">
+            <span class="meta-label">Primary Institution</span>
+            <span class="meta-value">IISER Pune</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Department</span>
+            <span class="meta-value">Mathematics</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Working Language</span>
+            <span class="meta-value">Python / R / LaTeX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workbench Module for Lorenz-96 -->
+      <div class="hero-workbench-col">
+        <div class="workbench-frame">
+          <div class="workbench-header">
+            <div class="workbench-title">
+              <span class="status-indicator cyan"></span>
+              <span>LORENZ-96 DYNAMICAL WORKBENCH (K=40)</span>
+            </div>
+            <span class="badge-subtle font-mono">RK4 Integration</span>
+          </div>
+
+          <div class="workbench-viewport">
+            <canvas id="l96-canvas"></canvas>
+            <canvas id="hovmoller-canvas"></canvas>
+          </div>
+
+          <div class="workbench-telemetry">
+            <div class="telem-item">
+              <span class="telem-key">Forcing (F)</span>
+              <span class="telem-val font-mono text-cyan" id="f-val">8.0</span>
+            </div>
+            <div class="telem-item">
+              <span class="telem-key">Total Energy (E)</span>
+              <span class="telem-val font-mono text-amber" id="energy-val">--</span>
+            </div>
+            <div class="telem-item">
+              <span class="telem-key">State Regime</span>
+              <span class="telem-val font-mono text-emerald" id="regime-val">Turbulent Wave</span>
+            </div>
+          </div>
+
+          <div class="workbench-controls">
+            <div class="slider-control">
+              <label for="f-slider">Adjust F:</label>
+              <input type="range" id="f-slider" min="2" max="16" step="0.2" value="8.0">
+            </div>
+            <div class="button-control-group">
+              <button id="kick-btn" class="btn-workbench">&Delta;&xi; Stochastic Shock</button>
+              <button id="toggle-hov-btn" class="btn-workbench">Toggle Hovmöller</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Research Cards -->
+    <section class="section container">
+      <div class="section-label">
+        <span class="label-indicator purple"></span>
+        <span>PRIMARY RESEARCH FOCUS</span>
+      </div>
+
+      <div class="dual-feature-grid">
+        <article class="feature-card border-purple">
+          <div class="card-eyebrow">
+            <span class="pill pill-purple">Dynamical Systems</span>
+            <span class="date-tag font-mono">Aug 2026 - Present</span>
+          </div>
+          <h2>Lorenz-96 Subgrid Parameterization & Online Stability</h2>
+          <p class="feature-summary">
+            Investigating the critical threshold of training data volume required for a neural network closure 
+            of the unresolved coupling term $U_k$ to remain stable and physically consistent when integrated online 
+            in reduced models.
+          </p>
+          <div class="feature-footer">
+            <div class="tech-tags">
+              <span>Lorenz-96</span>
+              <span>Neural Closures</span>
+              <span>Online Stability</span>
+            </div>
+            <a href="writeups/lorenz96.html" class="link-arrow text-purple">Read Complete Deep Dive &rarr;</a>
+          </div>
+        </article>
+
+        <article class="feature-card border-cyan">
+          <div class="card-eyebrow">
+            <span class="pill pill-cyan">Atmospheric Dynamics</span>
+            <span class="date-tag font-mono">May 2026 - Jul 2026</span>
+          </div>
+          <h2>Impact of ENSO on Kharif Crop Rainfall Variability</h2>
+          <p class="feature-summary">
+            Exploratory data analysis, spatial interpolation architectures over IMD precipitation datasets, 
+            and quantification of rainfall sensitivity indices across primary agricultural belts in India.
+          </p>
+          <div class="feature-footer">
+            <div class="tech-tags">
+              <span>ISI Kolkata</span>
+              <span>Interpolation</span>
+              <span>Monsoon Indices</span>
+            </div>
+            <a href="projects.html" class="link-arrow text-cyan">View Summary & Methodology &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Professional & Platform Showcases -->
+    <section class="section container">
+      <div class="section-label">
+        <span class="label-indicator emerald"></span>
+        <span>NETWORK & CODE PROFILES</span>
+      </div>
+
+      <div class="dual-platform-grid">
+        <!-- Enhanced GitHub Showcase Card -->
+        <div class="platform-card border-violet">
+          <div class="platform-card-header">
+            <div class="platform-meta">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <div>
+                <h3>@avtarfr</h3>
+                <span class="text-muted font-mono" style="font-size: 0.8rem;">github.com/avtarfr</span>
+              </div>
+            </div>
+            <a href="https://github.com/avtarfr?tab=repositories" target="_blank" class="btn btn-sm btn-ghost">View All Repos &nearr;</a>
+          </div>
+          <p class="platform-description">
+            Computational implementations of chaotic oscillators, subgrid sweeps, automated event logic, and data analysis pipelines.
+          </p>
+          <div class="platform-metrics font-mono">
+            <div class="metric-unit">
+              <span class="num">Python / R</span>
+              <span class="desc">Primary Stack</span>
+            </div>
+            <div class="metric-unit">
+              <span class="num">Research</span>
+              <span class="desc">Workflows</span>
+            </div>
+            <div class="metric-unit">
+              <span class="num">Public</span>
+              <span class="desc">Source Code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced LinkedIn Showcase Card -->
+        <div class="platform-card border-cyan">
+          <div class="platform-card-header">
+            <div class="platform-meta">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <div>
+                <h3>Sumangalam Avtar Sharma</h3>
+                <span class="text-muted font-mono" style="font-size: 0.8rem;">linkedin.com/in/avtarfr</span>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" class="btn btn-sm btn-ghost">Profile &nearr;</a>
+          </div>
+          <p class="platform-description">
+            Academic milestones, research internships (ISI Kolkata, UC Berkeley REYES), and campus leadership roles.
+          </p>
+          <div class="platform-credentials">
+            <div class="cred-item">
+              <span class="font-mono text-cyan">&bull; BS-MS Mathematics Major</span>
+              <span>IISER Pune</span>
+            </div>
+            <div class="cred-item">
+              <span class="font-mono text-cyan">&bull; Maths Club Coordinator</span>
+              <span>IISER Pune</span>
+            </div>
+            <div class="cred-item">
+              <span class="font-mono text-cyan">&bull; Summer Research Trainee</span>
+              <span>IDEAS-TIH, ISI Kolkata</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic GitHub Repos Showcase -->
+    <section class="section container">
+      <div class="section-label">
+        <span class="label-indicator amber"></span>
+        <span>LATEST REPOSITORY PIPELINES</span>
+      </div>
+      <div id="github-repos" class="repo-grid">
+        <p class="loading-state">Querying GitHub API for @avtarfr...</p>
+      </div>
+    </section>
+
+    <!-- Direct Email Module -->
+    <section class="section container" id="contact">
+      <div class="section-label">
+        <span class="label-indicator emerald"></span>
+        <span>COMMUNICATION</span>
+      </div>
+
+      <div class="contact-frame">
+        <div class="contact-details">
+          <h2>Direct Inquiries</h2>
+          <p>
+            For inquiries regarding subgrid modelling experiments, computational code, or collaborative projects:
+          </p>
+          <div class="email-display-card">
+            <span class="font-mono text-emerald">sumangalam.avtarsharma@students.iiserpune.ac.in</span>
+          </div>
+          <div class="contact-subtext">
+            <span>Response window: Within 24-48 business hours</span>
+            <span>Location: Pune, Maharashtra, India</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="quick-mail-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="sender-name">Name</label>
+              <input type="text" id="sender-name" placeholder="Researcher / Collaborator" required>
+            </div>
+            <div class="form-field">
+              <label for="sender-subject">Subject</label>
+              <input type="text" id="sender-subject" placeholder="Lorenz-96 Parameterization Discussion" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="sender-body">Message</label>
+            <textarea id="sender-body" rows="4" placeholder="Your note or inquiry details..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-emerald" style="width: 100%; justify-content: center;">
+            Dispatch Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div>
+        <p><strong>Sumangalam Avtar Sharma</strong></p>
+        <p class="text-muted" style="font-size: 0.85rem;">IISER Pune &bull; Department of Mathematics</p>
+      </div>
+      <div class="footer-nav">
+        <a href="projects.html">Research</a>
+        <a href="cv.html">Curriculum Vitae</a>
+        <a href="https://github.com/avtarfr" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/avtarfr/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lorenz96.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
