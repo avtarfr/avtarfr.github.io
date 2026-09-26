@@ -3,177 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research & Projects | Sumangalam Avtar Sharma</title>
+  <title>Projects &amp; Writeups | Sumangalam Avtar Sharma</title>
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
       document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
     })();
   </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body);"></script>
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
-  <div class="site-ambient-glow"></div>
-
+  <!-- Header / Navigation Bar -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand">
-        <span class="brand-indicator"></span>
-        Sumangalam Avtar Sharma
-      </a>
-      <nav>
-        <a href="index.html">Overview</a>
-        <a href="projects.html" class="active">Research & Writeups</a>
-        <a href="cv.html">CV & Coursework</a>
+      <a href="index.html" class="brand">Sumangalam Avtar Sharma</a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#interests">Interests</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="cv.html">Coursework &amp; CV</a>
         <a href="index.html#contact">Contact</a>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
-          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <span id="theme-toggle-label">Light</span>
-        </button>
       </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+        <span id="theme-toggle-label">Light</span>
+      </button>
     </div>
   </header>
 
   <main class="container page-wrapper">
-    <div class="page-intro">
-      <h1>Research & Modelling Projects</h1>
-      <p class="subtitle">Systematic studies in dynamical parameterizations, atmospheric variability, and statistical modeling.</p>
+    <div class="page-header">
+      <h1 class="page-title">Projects &amp; Writeups</h1>
+      <p class="page-subtitle">Undergraduate work in dynamical parameterizations, atmospheric data, and statistical modeling.</p>
     </div>
 
-    <!-- Project 1 with direct link to dedicated deep dive -->
-    <article class="project-entry-card border-purple">
-      <div class="entry-header">
-        <div>
-          <div class="badge-cluster">
-            <span class="pill pill-purple">Active Research</span>
-            <span class="pill pill-muted">Dynamical Systems</span>
-          </div>
-          <h2>Parameterization of Lorenz-96 and Testing Online Stability Against Training Data Volume</h2>
+    <!-- Project 1 (Lorenz-96) -->
+    <article class="project-detail-card" id="lorenz96">
+      <div class="project-card-header">
+        <div class="tech-tags">
+          <span>Dynamical Systems</span>
+          <span>Independent Study</span>
         </div>
-        <span class="meta-date font-mono">Aug 2026 - Present &bull; Independent</span>
+        <span class="project-card-period">Aug 2026 - Present</span>
       </div>
 
-      <p class="entry-abstract">
-        Evaluating the minimum training data volume required for a data-driven subgrid coupling parameterization 
-        $U_k$ to remain bounded, physically consistent, and free of climate drift when coupled online into the 
-        reduced Lorenz-96 single-layer equations.
+      <h2>Parameterization of Lorenz-96 and Testing Online Stability Against Training Data Volume</h2>
+
+      <p>
+        Evaluating how much training data a neural network needs to parameterize unresolved subgrid coupling 
+        $U_k$ without drift or instability when integrated online in the single-layer Lorenz-96 model.
       </p>
 
       <div class="equation-container">
-        <button class="copy-latex" data-tex="\\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - U_k(X)">Copy LaTeX</button>
+        <button class="copy-latex" data-tex="\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - U_k(X)">Copy LaTeX</button>
         $$\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - U_k(X)$$
       </div>
 
       <div class="entry-bullets">
         <ul>
-          <li>Replicated base configurations from M&sup2;LInES multi-scale climate notebooks.</li>
-          <li>Executed systematic volume sweeps over 10 distinct sample-size tiers across two activation architectures.</li>
-          <li>Trained 20 individual neural network parameterizations to chart offline $R^2$ performance against online orbit boundedness.</li>
+          <li>Adapted two-tier Lorenz-96 equations from standard numerical benchmarks.</li>
+          <li>Ran data volume sweeps across 10 sample-size tiers and two activation functions.</li>
+          <li>Trained 20 small neural network parameterizations to compare offline $R^2$ fit against online stability and orbit boundedness.</li>
         </ul>
       </div>
 
-      <div class="entry-actions">
-        <a href="writeups/lorenz96.html" class="btn btn-purple">Open Detailed Writeup &rarr;</a>
-        <a href="https://github.com/avtarfr" target="_blank" class="btn btn-ghost">Repository &nearr;</a>
+      <div class="project-card-footer">
+        <div class="tech-tags">
+          <span>Lorenz-96</span>
+          <span>Subgrid Closures</span>
+          <span>RK4 Integration</span>
+          <span>PyTorch</span>
+        </div>
+        <div class="project-actions">
+          <a href="writeups/lorenz96.html" class="btn btn-primary">Read Full Writeup &rarr;</a>
+          <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Repository &nearr;</a>
+        </div>
       </div>
     </article>
 
-    <!-- Project 2 -->
-    <article class="project-entry-card border-cyan">
-      <div class="entry-header">
-        <div>
-          <div class="badge-cluster">
-            <span class="pill pill-cyan">Research & Training</span>
-            <span class="pill pill-muted">ISI Kolkata &bull; IDEAS-TIH</span>
-          </div>
-          <h2>Impact of ENSO on Rainfall Variability Across Major Kharif Crop States</h2>
+    <!-- Project 2 (ENSO / IMD Rainfall) -->
+    <article class="project-detail-card" id="enso">
+      <div class="project-card-header">
+        <div class="tech-tags">
+          <span>Monsoon Dynamics</span>
+          <span>ISI Kolkata (IDEAS-TIH)</span>
         </div>
-        <span class="meta-date font-mono">May 2026 - Jul 2026</span>
+        <span class="project-card-period">May 2026 - Jul 2026</span>
       </div>
 
-      <p class="entry-abstract">
-        Constructed a spatial interpolation method over IMD precipitation datasets to achieve higher spatial resolution 
-        for seasonal monsoon analysis. Automated per-state analytical pipelines via Google Cloud APIs and evaluated 
-        ENSO Sensitivity Indices across agricultural growing regions.
+      <h2>Impact of ENSO on Rainfall Variability Across Major Kharif Crop States</h2>
+
+      <p>
+        Built a spatial interpolation pipeline over IMD gridded precipitation data to increase resolution 
+        for monsoon analysis. Automated state-level data retrieval and calculated ENSO sensitivity indices across agricultural belts.
+      </p>
+
+      <div class="equation-container">
+        <button class="copy-latex" data-tex="\text{ESI} = \frac{\bar{P}_{\text{El Niño}} - \bar{P}_{\text{La Niña}}}{\sigma_{\text{climatology}}}">Copy LaTeX</button>
+        $$\text{ESI} = \frac{\bar{P}_{\text{El Niño}} - \bar{P}_{\text{La Niña}}}{\sigma_{\text{climatology}}}$$
+      </div>
+
+      <div class="entry-bullets">
+        <ul>
+          <li>Analyzed multi-decadal daily precipitation records from the Indian Meteorological Department.</li>
+          <li>Interpolated rainfall observations onto denser grids for regional comparisons.</li>
+          <li>Wrote modular Python scripts with Google Cloud APIs to automate data collation per state.</li>
+          <li>Calculated ENSO sensitivity indices to evaluate regional monsoon rainfall shifts across crop belts.</li>
+        </ul>
+      </div>
+
+      <div class="project-card-footer">
+        <div class="tech-tags">
+          <span>ISI Kolkata</span>
+          <span>IMD Grids</span>
+          <span>Spatial Interpolation</span>
+          <span>Python</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Repository &nearr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3 (Cognitive Reasoning) -->
+    <article class="project-detail-card" id="reasoning">
+      <div class="project-card-header">
+        <div class="tech-tags">
+          <span>Cognitive Modeling</span>
+          <span>Problem Solvers Lab, IISER Pune</span>
+        </div>
+        <span class="project-card-period">Jun 2026 - Jul 2026</span>
+      </div>
+
+      <h2>Patterns of Reasoning and Factors of Growth</h2>
+
+      <p>
+        Investigated problem-solving steps and strategies during complex pattern recognition puzzles, 
+        developing a rubric to track how students navigate unfamiliar problems.
       </p>
 
       <div class="entry-bullets">
         <ul>
-          <li>Carried out exploratory data analysis on multi-decadal Indian Meteorological Department precipitation records.</li>
-          <li>Formulated spatial interpolation schemes to generate dense rainfall grids.</li>
-          <li>Architected modular Python scripts integrated with Google Cloud APIs to automate data collation per state.</li>
-          <li>Computed ENSO Sensitivity Indices and Classification Balance metrics to quantify regional agricultural vulnerabilities.</li>
+          <li>Reviewed literature on cognitive frameworks and pattern recognition.</li>
+          <li>Cleaned and structured participant solution data and response logs.</li>
+          <li>Identified common problem-solving stages and transition points across puzzle attempts.</li>
         </ul>
       </div>
 
-      <div class="entry-actions">
-        <a href="https://github.com/avtarfr" target="_blank" class="btn btn-cyan">Repository &nearr;</a>
+      <div class="project-card-footer">
+        <div class="tech-tags">
+          <span>IISER Pune</span>
+          <span>Problem Solving</span>
+          <span>Rubric Development</span>
+        </div>
       </div>
     </article>
 
-    <!-- Project 3 -->
-    <article class="project-entry-card border-amber">
-      <div class="entry-header">
-        <div>
-          <div class="badge-cluster">
-            <span class="pill pill-amber">Research Project</span>
-            <span class="pill pill-muted">Problem Solvers Lab &bull; IISER Pune</span>
-          </div>
-          <h2>Patterns of Reasoning and Factors of Growth</h2>
+    <!-- Project 4 (Circular Economy) -->
+    <article class="project-detail-card" id="circular-economy">
+      <div class="project-card-header">
+        <div class="tech-tags">
+          <span>Applied Statistics</span>
+          <span>UC Berkeley REYES</span>
         </div>
-        <span class="meta-date font-mono">Jun 2026 - Jul 2026</span>
+        <span class="project-card-period">Jun 2025 - Oct 2025</span>
       </div>
 
-      <p class="entry-abstract">
-        Investigated reasoning sequences and cognitive leaps during complex pattern recognition problems, 
-        synthesizing an empirical rubric to measure individual problem-solving workflows.
+      <h2>Statistical Instrument on Circular Economy</h2>
+
+      <p>
+        Analyzed survey responses and academic literature to assess public understanding and institutional adoption 
+        of circular economy practices.
       </p>
 
       <div class="entry-bullets">
         <ul>
-          <li>Conducted systematic literature reviews surveying historical frameworks in pattern analysis.</li>
-          <li>Executed iterative data cleaning, restructuring, and schema validation on empirical telemetry.</li>
-          <li>Synthesized a formal conceptual model classifying inferential trajectories during puzzle tasks.</li>
+          <li>Surveyed over 1,000 respondents on basic concepts and practices.</li>
+          <li>Synthesized data from over 300 peer-reviewed articles.</li>
+          <li>Applied linear regression, ANOVA, and hypothesis tests in R and Python to evaluate group differences.</li>
         </ul>
       </div>
-    </article>
 
-    <!-- Project 4 -->
-    <article class="project-entry-card border-emerald">
-      <div class="entry-header">
-        <div>
-          <div class="badge-cluster">
-            <span class="pill pill-emerald">Mentorship Program</span>
-            <span class="pill pill-muted">UC Berkeley &bull; REYES</span>
-          </div>
-          <h2>Statistical Instrument on Circular Economy</h2>
+      <div class="project-card-footer">
+        <div class="tech-tags">
+          <span>UC Berkeley REYES</span>
+          <span>ANOVA</span>
+          <span>R / Python</span>
         </div>
-        <span class="meta-date font-mono">Jun 2025 - Oct 2025</span>
-      </div>
-
-      <p class="entry-abstract">
-        Evaluated public awareness, institutional metrics, and implementation trends regarding Circular Economy 
-        frameworks through high-sample survey analysis and extensive literature extraction.
-      </p>
-
-      <div class="entry-bullets">
-        <ul>
-          <li>Surveyed over 1,000 respondents to quantify public baseline knowledge.</li>
-          <li>Synthesized data across an academic corpus of over 300 peer-reviewed articles.</li>
-          <li>Applied linear regression, ANOVA models, and hypothesis testing in R and Python.</li>
-        </ul>
       </div>
     </article>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-layout">
-      <p>Sumangalam Avtar Sharma &bull; IISER Pune</p>
-      <a href="index.html">Return to Overview</a>
+      <span>Sumangalam Avtar Sharma, IISER Pune</span>
+      <div style="display: flex; gap: 1.4rem;">
+        <a href="index.html">Overview</a>
+        <a href="cv.html">Coursework &amp; CV</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      </div>
     </div>
   </footer>
 

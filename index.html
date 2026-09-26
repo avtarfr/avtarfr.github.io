@@ -3,327 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumangalam Avtar Sharma | Climate Dynamics & Stochastic Modelling</title>
+  <title>Sumangalam Avtar Sharma | IISER Pune</title>
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
       document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
     })();
   </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
-  <div class="site-ambient-glow"></div>
-
+  <!-- Header / Navigation Bar -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand">
-        <span class="brand-indicator"></span>
-        Sumangalam Avtar Sharma
-      </a>
-      <nav>
-        <a href="index.html" class="active">Overview</a>
-        <a href="projects.html">Research & Writeups</a>
-        <a href="cv.html">CV & Coursework</a>
+      <a href="index.html" class="brand">Sumangalam Avtar Sharma</a>
+      <nav class="nav-links">
+        <a href="#about" class="active">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#code">Code</a>
         <a href="#contact">Contact</a>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
-          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <span id="theme-toggle-label">Light</span>
-        </button>
       </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+        <span id="theme-toggle-label">Light</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- Asymmetric Split Hero -->
-    <section class="hero-split container">
-      <div class="hero-bio-col">
-        <div class="identity-badge">
-          <span class="pulse-dot"></span>
-          <span>IISER Pune &bull; BS-MS Mathematics</span>
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-name">Sumangalam Avtar Sharma</h1>
+          <p class="hero-role">BS-MS Dual Degree Student in Mathematics, IISER Pune</p>
+          
+          <p class="hero-bio">
+            I am an undergraduate student in mathematics at the Indian Institute of Science Education and Research (IISER), Pune. My interests include dynamical systems, atmospheric variability, and applied statistics. Here you will find notes on my coursework, student projects, writeups, and code.
+          </p>
+
+          <div class="hero-contact-row">
+            <div class="hero-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:sumangalam.avtarsharma@students.iiserpune.ac.in">sumangalam.avtarsharma@students.iiserpune.ac.in</a>
+            </div>
+            <div class="hero-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Department of Mathematics, IISER Pune</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects &amp; Writeups &darr;</a>
+            <a href="cv.html" class="btn btn-outline">Coursework &amp; CV (PDF) &nearr;</a>
+          </div>
         </div>
-        
-        <h1 class="hero-title">Sumangalam Avtar Sharma</h1>
-        <p class="hero-tagline">Mathematical Modelling &bull; Stochastic Climate Dynamics &bull; Subgrid Closures</p>
-        
-        <p class="hero-text">
-          Undergraduate student at IISER Pune focusing on climate modelling systems, stochastic climate dynamics, subgrid parameterizations, and data-driven parameterizations. Currently planning to explore Bayesian Inference Methods and Data Assimilation techniques for Climate Models, with an equal interest in the mathematical foundations of the same.
+      </div>
+    </section>
+
+    <!-- Academic Interests Section (01, 02, 03 from Kanoa Template) -->
+    <section class="section section-alt" id="interests">
+      <div class="container">
+        <h2 class="section-headline">Academic Interests</h2>
+        <p class="section-subtitle">
+          Primary areas of coursework and computational experimentation during my undergraduate degree at IISER Pune.
         </p>
 
-        <div class="hero-action-buttons">
-          <a href="projects.html" class="btn btn-accent">Research Writeups</a>
-          <a href="cv.html" class="btn btn-ghost">Academic CV</a>
-          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-        </div>
+        <div class="interests-grid">
+          <!-- Card 01 -->
+          <article class="interest-card">
+            <div class="interest-num">01</div>
+            <h3 class="interest-title">Dynamical Systems &amp; Chaos</h3>
+            <p class="interest-desc">
+              Study of nonlinear differential equations, single- and two-tier Lorenz-96 systems, RK4 integration, and evaluating online numerical stability under data-driven subgrid closures.
+            </p>
+          </article>
 
-        <div class="hero-meta-strip">
-          <div class="meta-block">
-            <span class="meta-label">Primary Institution</span>
-            <span class="meta-value">IISER Pune</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">Department</span>
-            <span class="meta-value">Mathematics</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">Working Language</span>
-            <span class="meta-value">Python / R / LaTeX</span>
-          </div>
+          <!-- Card 02 -->
+          <article class="interest-card">
+            <div class="interest-num">02</div>
+            <h3 class="interest-title">Atmospheric &amp; Climate Variability</h3>
+            <p class="interest-desc">
+              Analyzing Indian monsoon dynamics, regional ENSO sensitivity indices, and spatial interpolation techniques across multi-decadal gridded precipitation datasets.
+            </p>
+          </article>
+
+          <!-- Card 03 -->
+          <article class="interest-card">
+            <div class="interest-num">03</div>
+            <h3 class="interest-title">Applied Statistics &amp; ML</h3>
+            <p class="interest-desc">
+              Applying Bayesian estimation, time series analysis, regression modeling, and hypothesis testing to evaluate generalization limits in physical systems and empirical surveys.
+            </p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Workbench Module for Lorenz-96 -->
-      <div class="hero-workbench-col">
-        <div class="workbench-frame">
-          <div class="workbench-header">
-            <div class="workbench-title">
-              <span class="status-indicator"></span>
-              <span>LORENZ-96 DYNAMICAL WORKBENCH (K=40)</span>
+    <!-- Selected Works / Projects Section (Split Layout from Kanoa Template) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="works-split">
+          <!-- Left Column Sidebar -->
+          <div class="works-sidebar">
+            <h2 class="section-headline">Projects &amp; Writeups</h2>
+            <p class="section-subtitle">
+              Undergraduate projects in dynamical parameterizations, atmospheric data, and statistical analysis.
+            </p>
+            <div class="works-badge">
+              4 Selected Projects / IISER Pune &amp; ISI Kolkata
             </div>
-            <span class="badge-subtle font-mono">RK4 Integration</span>
-          </div>
-
-          <div class="workbench-viewport">
-            <canvas id="l96-canvas" role="img" aria-label="Lorenz-96 dynamical system phase trajectory simulation"></canvas>
-            <canvas id="hovmoller-canvas" role="img" aria-label="Lorenz-96 Hovmöller spatio-temporal diagram overlay"></canvas>
-          </div>
-
-          <div class="workbench-telemetry">
-            <div class="telem-item">
-              <span class="telem-key">Forcing (F)</span>
-              <span class="telem-val font-mono" id="f-val">8.0</span>
-            </div>
-            <div class="telem-item">
-              <span class="telem-key">Total Energy (E)</span>
-              <span class="telem-val font-mono" id="energy-val">--</span>
-            </div>
-            <div class="telem-item">
-              <span class="telem-key">State Regime</span>
-              <span class="telem-val font-mono" id="regime-val">Turbulent Wave</span>
+            <div>
+              <a href="projects.html" class="btn btn-outline btn-sm">Full Project Catalog &rarr;</a>
             </div>
           </div>
 
-          <div class="workbench-controls">
-            <div class="slider-control">
-              <label for="f-slider">Adjust F:</label>
-              <input type="range" id="f-slider" min="2" max="16" step="0.2" value="8.0">
-            </div>
-            <div class="button-control-group">
-              <button id="kick-btn" class="btn-workbench">&Delta;&xi;&nbsp; Stochastic Shock</button>
-              <button id="toggle-hov-btn" class="btn-workbench">Toggle Hovmöller</button>
-            </div>
+          <!-- Right Column List -->
+          <div class="works-list">
+            <!-- Project 1 -->
+            <article class="work-item">
+              <div class="work-header">
+                <span class="work-tag">Lorenz-96 / Independent Study</span>
+                <span class="work-period">Aug 2026 - Present</span>
+              </div>
+              <h3 class="work-title">Lorenz-96 Subgrid Parameterization &amp; Online Stability</h3>
+              <p class="work-desc">
+                Evaluating how much training data a neural network needs to parameterize unresolved subgrid coupling $U_k$ without drift or blow-up when integrated online in the single-layer Lorenz-96 model.
+              </p>
+              <div class="equation-container">
+                <button class="copy-latex" data-tex="\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - \hat{U}_k(X)">Copy LaTeX</button>
+                $$\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - \hat{U}_k(X)$$
+              </div>
+              <div class="work-actions">
+                <a href="writeups/lorenz96.html" class="work-action-link">Read Full Writeup &rarr;</a>
+                <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer" class="work-action-link">GitHub Code &nearr;</a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="work-item">
+              <div class="work-header">
+                <span class="work-tag">Monsoon Dynamics / ISI Kolkata (IDEAS-TIH)</span>
+                <span class="work-period">May 2026 - Jul 2026</span>
+              </div>
+              <h3 class="work-title">Impact of ENSO on Kharif Crop Rainfall Variability</h3>
+              <p class="work-desc">
+                Summer project at ISI Kolkata building a spatial interpolation pipeline over IMD gridded precipitation data to increase resolution and calculate regional ENSO sensitivity indices across agricultural belts.
+              </p>
+              <div class="equation-container">
+                <button class="copy-latex" data-tex="\text{ESI} = \frac{\bar{P}_{\text{El Niño}} - \bar{P}_{\text{La Niña}}}{\sigma_{\text{climatology}}}">Copy LaTeX</button>
+                $$\text{ESI} = \frac{\bar{P}_{\text{El Niño}} - \bar{P}_{\text{La Niña}}}{\sigma_{\text{climatology}}}$$
+              </div>
+              <div class="work-actions">
+                <a href="projects.html#enso" class="work-action-link">Project Details &rarr;</a>
+                <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer" class="work-action-link">GitHub Code &nearr;</a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="work-item">
+              <div class="work-header">
+                <span class="work-tag">Cognitive Modeling / Problem Solvers Lab</span>
+                <span class="work-period">Jun 2026 - Jul 2026</span>
+              </div>
+              <h3 class="work-title">Patterns of Reasoning and Factors of Growth</h3>
+              <p class="work-desc">
+                Investigated student problem-solving steps and strategies during complex pattern recognition puzzles at IISER Pune, developing a rubric to track how learners navigate unfamiliar mathematical tasks.
+              </p>
+              <div class="work-actions">
+                <a href="projects.html#reasoning" class="work-action-link">Project Details &rarr;</a>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="work-item">
+              <div class="work-header">
+                <span class="work-tag">Applied Statistics / UC Berkeley REYES</span>
+                <span class="work-period">Jun 2025 - Oct 2025</span>
+              </div>
+              <h3 class="work-title">Statistical Instrument on Circular Economy</h3>
+              <p class="work-desc">
+                Summer study with UC Berkeley REYES analyzing survey responses and academic literature to assess public understanding of circular economy practices using regression and ANOVA in R and Python.
+              </p>
+              <div class="work-actions">
+                <a href="projects.html#circular-economy" class="work-action-link">Project Details &rarr;</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Research Cards -->
-    <section class="section container">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>PRIMARY RESEARCH FOCUS</span>
-      </div>
-      <h2 class="section-headline">Primary Research & Modelling Projects</h2>
+    <!-- Relevant Coursework Section -->
+    <section class="section section-alt" id="coursework">
+      <div class="container">
+        <h2 class="section-headline">Relevant Coursework</h2>
+        <p class="section-subtitle">
+          Undergraduate coursework completed or underway in mathematics, computing, and physical sciences at IISER Pune.
+        </p>
 
-      <div class="dual-feature-grid">
-        <article class="feature-card">
-          <div class="card-eyebrow">
-            <span class="pill">Dynamical Systems</span>
-            <span class="date-tag font-mono">Aug 2026 - Present</span>
-          </div>
-          <h2>Lorenz-96 Subgrid Parameterization & Online Stability</h2>
-          <p class="feature-summary">
-            Investigating the critical threshold of training data volume required for a neural network closure 
-            of the unresolved coupling term $U_k$ to remain stable and physically consistent when integrated online 
-            in reduced models.
-          </p>
-          <div class="feature-footer">
-            <div class="tech-tags">
-              <span>Lorenz-96</span>
-              <span>Neural Closures</span>
-              <span>Online Stability</span>
+        <div class="coursework-quad-grid">
+          <!-- Computing & Data Science -->
+          <div class="course-panel">
+            <div class="course-panel-header">
+              <h3>Computing &amp; Data Science</h3>
             </div>
-            <a href="writeups/lorenz96.html" class="link-arrow">Read Complete Deep Dive &rarr;</a>
+            <ul class="course-entries">
+              <li><span class="code">DS4144</span> Deep Learning</li>
+              <li><span class="code">DS4233</span> Time Series Analysis</li>
+              <li><span class="code">DS4244</span> Bayesian Theory and Practice</li>
+              <li><span class="code">TD2223</span> Data Analysis</li>
+              <li><span class="code">TD1113</span> Intro to Computing</li>
+            </ul>
           </div>
-        </article>
 
-        <article class="feature-card">
-          <div class="card-eyebrow">
-            <span class="pill">Atmospheric Dynamics</span>
-            <span class="date-tag font-mono">May 2026 - Jul 2026</span>
-          </div>
-          <h2>Impact of ENSO on Kharif Crop Rainfall Variability</h2>
-          <p class="feature-summary">
-            Exploratory data analysis, spatial interpolation architectures over IMD precipitation datasets, 
-            and quantification of rainfall sensitivity indices across primary agricultural belts in India.
-          </p>
-          <div class="feature-footer">
-            <div class="tech-tags">
-              <span>ISI Kolkata</span>
-              <span>Interpolation</span>
-              <span>Monsoon Indices</span>
+          <!-- Climate & Earth Sciences -->
+          <div class="course-panel">
+            <div class="course-panel-header">
+              <h3>Climate &amp; Earth Sciences</h3>
             </div>
-            <a href="projects.html" class="link-arrow">View Summary & Methodology &rarr;</a>
+            <ul class="course-entries">
+              <li><span class="code">EC3124</span> Physics of the Atmosphere</li>
+              <li><span class="code">EC2213</span> Principles of Planetary Climate</li>
+              <li><span class="code">EC2113</span> Intro to Climate Science</li>
+              <li><span class="code">EC1223</span> The Solid Earth</li>
+              <li><span class="code">EC1213</span> Evolution of Earth &amp; Life</li>
+            </ul>
           </div>
-        </article>
+
+          <!-- Mathematics -->
+          <div class="course-panel">
+            <div class="course-panel-header">
+              <h3>Mathematics</h3>
+            </div>
+            <ul class="course-entries">
+              <li><span class="code">MT2113</span> Intro to Probability</li>
+              <li><span class="code">MT2223</span> Real Analysis I</li>
+              <li><span class="code">MT3124</span> Real Analysis II</li>
+              <li><span class="code">MT3134</span> Point Set Topology</li>
+              <li><span class="code">MT1223</span> Linear Algebra</li>
+            </ul>
+          </div>
+
+          <!-- Physics -->
+          <div class="course-panel">
+            <div class="course-panel-header">
+              <h3>Physics</h3>
+            </div>
+            <ul class="course-entries">
+              <li><span class="code">PH2213</span> Classical Mechanics</li>
+              <li><span class="code">PH2223</span> Thermal &amp; Statistical Physics</li>
+              <li><span class="code">PH2123</span> Mathematical Methods for Physics</li>
+              <li><span class="code">PH1113</span> Introductory Mechanics</li>
+              <li><span class="code">PH2113</span> Introductory Quantum Physics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="cv.html#coursework" class="btn btn-outline btn-sm">Full Course List &amp; Official CV Document &nearr;</a>
+        </div>
       </div>
     </section>
 
-    <!-- Professional & Platform Showcases -->
-    <section class="section container">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>NETWORK & CODE PROFILES</span>
-      </div>
-      <h2 class="section-headline">Computational Pipelines & Academic Profiles</h2>
+    <!-- Code & Repositories Section -->
+    <section class="section" id="code">
+      <div class="container">
+        <h2 class="section-headline">Code &amp; Repositories</h2>
+        <p class="section-subtitle">
+          Code repositories, computational routines, and course scripts maintained on GitHub.
+        </p>
 
-      <div class="dual-platform-grid">
-        <!-- Enhanced GitHub Showcase Card -->
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-meta">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              <div>
-                <h3>@avtarfr</h3>
-                <span class="text-muted font-mono platform-subtext">github.com/avtarfr</span>
+        <div class="repo-grid" id="github-repos">
+          <!-- Populated by js/main.js with fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-headline">Contact</h2>
+        <p class="section-subtitle">
+          Feel free to reach out regarding coursework, code, or collaborative student projects.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div>
+              <p class="contact-address-title">
+                Institutional Address
+              </p>
+              <p class="contact-address-text">
+                Department of Mathematics<br>
+                Indian Institute of Science Education and Research (IISER), Pune<br>
+                Dr. Homi Bhabha Road, Pashan, Pune 411008, Maharashtra, India
+              </p>
+              <div class="email-box">
+                sumangalam.avtarsharma@students.iiserpune.ac.in
               </div>
             </div>
-            <a href="https://github.com/avtarfr?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">View All Repos &nearr;</a>
-          </div>
-          <p class="platform-description">
-            Computational implementations of chaotic oscillators, subgrid sweeps, automated event logic, and data analysis pipelines.
-          </p>
-          <div class="platform-metrics font-mono">
-            <div class="metric-unit">
-              <span class="num">Python / R</span>
-              <span class="desc">Primary Stack</span>
-            </div>
-            <div class="metric-unit">
-              <span class="num">Research</span>
-              <span class="desc">Workflows</span>
-            </div>
-            <div class="metric-unit">
-              <span class="num">Public</span>
-              <span class="desc">Source Code</span>
+            <div class="contact-footer-links">
+              <span>Links: </span>
+              <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a> /
+              <a href="cv.html">Curriculum Vitae &nearr;</a>
             </div>
           </div>
-        </div>
 
-        <!-- Enhanced LinkedIn Showcase Card -->
-        <div class="platform-card">
-          <div class="platform-card-header">
-            <div class="platform-meta">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg" aria-hidden="true">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              <div>
-                <h3>Sumangalam Avtar Sharma</h3>
-                <span class="text-muted font-mono platform-subtext">linkedin.com/in/avtarfr</span>
+          <form id="quick-mail-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="sender-name">Name</label>
+                <input type="text" id="sender-name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="sender-subject">Subject</label>
+                <input type="text" id="sender-subject" placeholder="Topic or course" required>
               </div>
             </div>
-            <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">Profile &nearr;</a>
-          </div>
-          <p class="platform-description">
-            Academic milestones, research internships (ISI Kolkata, UC Berkeley REYES), and campus leadership roles.
-          </p>
-          <div class="platform-credentials">
-            <div class="cred-item">
-              <span class="font-mono text-accent">&bull; BS-MS Mathematics Major</span>
-              <span>IISER Pune</span>
-            </div>
-            <div class="cred-item">
-              <span class="font-mono text-accent">&bull; Maths Club Coordinator</span>
-              <span>IISER Pune</span>
-            </div>
-            <div class="cred-item">
-              <span class="font-mono text-accent">&bull; Summer Research Trainee</span>
-              <span>IDEAS-TIH, ISI Kolkata</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dynamic GitHub Repos Showcase -->
-    <section class="section container">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>LATEST REPOSITORY PIPELINES</span>
-      </div>
-      <h2 class="section-headline">Recent Repository Implementations</h2>
-      <div id="github-repos" class="repo-grid">
-        <p class="loading-state">Querying GitHub API for @avtarfr...</p>
-      </div>
-    </section>
-
-    <!-- Direct Email Module -->
-    <section class="section container" id="contact">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>COMMUNICATION</span>
-      </div>
-      <h2 class="section-headline">Direct Academic Communication</h2>
-
-      <div class="contact-frame">
-        <div class="contact-details">
-          <h2>Direct Inquiries</h2>
-          <p>
-            For inquiries regarding subgrid modelling experiments, computational code, or collaborative projects:
-          </p>
-          <div class="email-display-card">
-            <span class="font-mono text-accent">sumangalam.avtarsharma@students.iiserpune.ac.in</span>
-          </div>
-          <div class="contact-subtext">
-            <span>Response window: Within 24-48 business hours</span>
-            <span>Location: Pune, Maharashtra, India</span>
-          </div>
-        </div>
-
-        <form class="contact-form" id="quick-mail-form">
-          <div class="form-row">
             <div class="form-field">
-              <label for="sender-name">Name</label>
-              <input type="text" id="sender-name" placeholder="Researcher / Collaborator" required>
+              <label for="sender-body">Message</label>
+              <textarea id="sender-body" rows="4" placeholder="Your message..." required></textarea>
             </div>
-            <div class="form-field">
-              <label for="sender-subject">Subject</label>
-              <input type="text" id="sender-subject" placeholder="Lorenz-96 Parameterization Discussion" required>
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="sender-body">Message</label>
-            <textarea id="sender-body" rows="4" placeholder="Your note or inquiry details..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-accent" style="width: 100%;">
-            Dispatch Message
-          </button>
-        </form>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-layout">
-      <div>
-        <p><strong>Sumangalam Avtar Sharma</strong></p>
-        <p class="text-muted footer-subtext">IISER Pune &bull; Department of Mathematics</p>
-      </div>
-      <div class="footer-nav">
-        <a href="projects.html">Research</a>
-        <a href="cv.html">Curriculum Vitae</a>
-        <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>Sumangalam Avtar Sharma, IISER Pune</span>
+      <div style="display: flex; gap: 1.4rem;">
+        <a href="#about">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">Coursework &amp; CV</a>
+        <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/lorenz96.js"></script>
   <script src="js/main.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </body>
 </html>

@@ -3,83 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curriculum Vitae & Coursework | Sumangalam Avtar Sharma</title>
+  <title>Coursework &amp; CV | Sumangalam Avtar Sharma</title>
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
       document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
     })();
   </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="site-ambient-glow"></div>
-
+  <!-- Header / Navigation Bar -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand">
-        <span class="brand-indicator"></span>
-        Sumangalam Avtar Sharma
-      </a>
-      <nav>
-        <a href="index.html">Overview</a>
-        <a href="projects.html">Research & Writeups</a>
-        <a href="cv.html" class="active">CV & Coursework</a>
+      <a href="index.html" class="brand">Sumangalam Avtar Sharma</a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#interests">Interests</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html" class="active">Coursework &amp; CV</a>
         <a href="index.html#contact">Contact</a>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
-          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <span id="theme-toggle-label">Light</span>
-        </button>
       </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+        <span id="theme-toggle-label">Light</span>
+      </button>
     </div>
   </header>
 
   <main class="container page-wrapper">
-    <div class="cv-title-bar">
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
       <div>
-        <h1>Curriculum Vitae</h1>
-        <p class="subtitle">Sumangalam Avtar Sharma &bull; IISER Pune</p>
+        <h1 class="page-title">Curriculum Vitae</h1>
+        <p class="page-subtitle">Department of Mathematics, IISER Pune</p>
       </div>
-      <div class="cv-direct-actions">
-        <a href="assets/cv.pdf" target="_blank" class="btn btn-emerald">Open PDF in New Tab</a>
-        <a href="assets/cv.pdf" download class="btn btn-ghost">Download PDF</a>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open PDF &nearr;</a>
+        <a href="assets/cv.pdf" download class="btn btn-outline">Download PDF</a>
       </div>
     </div>
 
     <!-- Official PDF Embed Element -->
     <section class="pdf-viewer-module">
       <div class="pdf-module-header">
-        <span class="font-mono" style="font-size: 0.8rem; color: var(--text-muted);">
-          Embedded Document: <code>website/assets/cv.pdf</code>
-        </span>
+        <span>assets/cv.pdf</span>
+        <span>PDF Document</span>
       </div>
+
       <object data="assets/cv.pdf" type="application/pdf" class="pdf-frame">
         <div class="pdf-fallback-box">
-          <p>Inline PDF viewer unavailable in this environment.</p>
-          <a href="assets/cv.pdf" class="btn btn-emerald">Download CV Document</a>
-          <p class="subtext" style="margin-top: 0.6rem;">Drop your CV file at <code>website/assets/cv.pdf</code>.</p>
+          <p style="margin-bottom: 1rem; color: var(--text-muted);">Inline PDF viewer unavailable in this environment.</p>
+          <a href="assets/cv.pdf" class="btn btn-primary">Download CV Document (PDF)</a>
         </div>
       </object>
     </section>
 
-    <!-- Relevant Coursework Breakdown (Strictly No Grades, No CGPA) -->
-    <section class="section" id="coursework">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>ACADEMIC FOUNDATIONS & COURSE RECORD</span>
+    <!-- Relevant Coursework Breakdown -->
+    <section class="section" id="coursework" style="padding-top: 0;">
+      <div class="section-header">
+        <h2 class="section-headline">Relevant Coursework</h2>
+        <p class="section-subtitle">
+          Undergraduate coursework completed or underway at IISER Pune in mathematics, data science, and physics.
+        </p>
       </div>
-      
-      <h2 class="section-headline">Relevant Academic Coursework</h2>
-      <p class="section-summary">
-        Core and advanced undergraduate coursework completed or underway at IISER Pune, relevant to 
-        mathematical modelling, atmospheric dynamics, and computational data science.
-      </p>
 
       <div class="coursework-quad-grid">
         <!-- Advanced Data Science & Computation -->
-        <div class="course-panel border-purple">
+        <div class="course-panel">
           <div class="course-panel-header">
-            <span class="pill pill-purple">Advanced & Data Science</span>
+            <h3>Data Science &amp; Computing</h3>
           </div>
           <ul class="course-entries">
             <li><span class="code">DS4144</span> Deep Learning</li>
@@ -91,9 +85,9 @@
         </div>
 
         <!-- Climate & Atmospheric Physics -->
-        <div class="course-panel border-cyan">
+        <div class="course-panel">
           <div class="course-panel-header">
-            <span class="pill pill-cyan">Atmospheric & Climate Physics</span>
+            <h3>Climate &amp; Earth Sciences</h3>
           </div>
           <ul class="course-entries">
             <li><span class="code">EC3124</span> Physics of the Atmosphere</li>
@@ -105,9 +99,9 @@
         </div>
 
         <!-- Pure & Foundational Mathematics -->
-        <div class="course-panel border-emerald">
+        <div class="course-panel">
           <div class="course-panel-header">
-            <span class="pill pill-emerald">Pure & Foundational Mathematics</span>
+            <h3>Mathematics</h3>
           </div>
           <ul class="course-entries">
             <li><span class="code">MT2113</span> Introduction to Probability</li>
@@ -124,13 +118,13 @@
         </div>
 
         <!-- Classical & Statistical Physics -->
-        <div class="course-panel border-amber">
+        <div class="course-panel">
           <div class="course-panel-header">
-            <span class="pill pill-amber">Classical & Statistical Physics</span>
+            <h3>Physics</h3>
           </div>
           <ul class="course-entries">
             <li><span class="code">PH2213</span> Classical Mechanics</li>
-            <li><span class="code">PH2223</span> Thermal & Statistical Physics</li>
+            <li><span class="code">PH2223</span> Thermal &amp; Statistical Physics</li>
             <li><span class="code">PH2123</span> Mathematical Methods for Physics</li>
             <li><span class="code">PH1113</span> Introductory Mechanics</li>
             <li><span class="code">PH2113</span> Introductory Quantum Physics</li>
@@ -139,41 +133,43 @@
       </div>
     </section>
 
-    <!-- Leadership & Co-Curricular Positions -->
-    <section class="section">
-      <div class="section-label">
-        <span class="label-indicator"></span>
-        <span>LEADERSHIP & SERVICE</span>
+    <!-- Activities & Co-Curricular -->
+    <section class="section" style="padding-top: 0;">
+      <div class="section-header">
+        <h2 class="section-headline">Activities &amp; Service</h2>
+        <p class="section-subtitle">
+          Student leadership and collegiate competition problem-setting at IISER Pune.
+        </p>
       </div>
-      <h2 class="section-headline">Leadership & Service Roles</h2>
 
       <div class="dual-feature-grid">
-        <div class="feature-card">
-          <span class="pill pill-emerald">Maths Club &bull; IISER Pune</span>
-          <h3>Coordinator (Jul 2025 - Present)</h3>
-          <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.92rem;">
-            Engineered automated Discord puzzle engines for the campus Treasure Hunt event. 
-            Organized Pi-Week lectures, coordinated technical talks, and authored contest problem sets 
-            covering probability theory and analysis.
+        <div class="service-card">
+          <h3>Coordinator, Maths Club, IISER Pune</h3>
+          <p>
+            Built a Discord bot for clue verification and progress tracking in the campus treasure hunt. Organized talks and Pi-Day events, and drafted competition problem sets in probability and analysis.
           </p>
         </div>
 
-        <div class="feature-card">
-          <span class="pill pill-purple">Science Communication</span>
+        <div class="service-card">
           <h3>Mimamsa Science Competition</h3>
-          <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.92rem;">
-            Served on the Physics question creation team for collegiate rounds. Presented an experimental 
-            demonstration at SciCon detailing string vibration physics and electromagnetic pickups in electric guitars.
+          <p>
+            Drafted physics problems for national collegiate competition rounds. Built an experimental demo for SciCon showing string harmonic vibration and electromagnetic guitar pickups.
           </p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-layout">
-      <p>Sumangalam Avtar Sharma &bull; IISER Pune</p>
-      <a href="index.html">Return to Overview</a>
+      <span>Sumangalam Avtar Sharma, IISER Pune</span>
+      <div style="display: flex; gap: 1.4rem;">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      </div>
     </div>
   </footer>
 

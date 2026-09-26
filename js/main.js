@@ -3,21 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Theme Toggle Controller
   const themeToggle = document.getElementById('theme-toggle');
   const toggleLabel = document.getElementById('theme-toggle-label');
-  const toggleIcon = document.querySelector('#theme-toggle .theme-icon');
 
   function updateToggleUI(theme) {
     if (!toggleLabel) return;
-    if (theme === 'light') {
-      toggleLabel.textContent = 'Dark';
-      if (toggleIcon) {
-        toggleIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-      }
-    } else {
-      toggleLabel.textContent = 'Light';
-      if (toggleIcon) {
-        toggleIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-      }
-    }
+    toggleLabel.textContent = theme === 'light' ? 'Dark' : 'Light';
   }
 
   const initialTheme = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -42,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = document.getElementById('sender-subject').value.trim();
       const body = document.getElementById('sender-body').value.trim();
 
-      const fullSubject = encodeURIComponent(`[Academic Inquiries] ${subject} (${name})`);
+      const fullSubject = encodeURIComponent(`[Website Contact] ${subject} (${name})`);
       const fullBody = encodeURIComponent(`From: ${name}\n\nMessage:\n${body}`);
       const mailtoUrl = `mailto:sumangalam.avtarsharma@students.iiserpune.ac.in?subject=${fullSubject}&body=${fullBody}`;
 
@@ -69,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fallback = [
     {
       name: 'Lorenz96-stability-sweep',
-      description: 'Online stability vs. data volume sweep across 20 neural parameterizations of Lorenz-96 subgrid dynamics.',
+      description: 'Online stability sweeps across neural parameterizations of Lorenz-96 subgrid dynamics as a function of training volume.',
       language: 'Python',
       stargazers_count: 0,
       forks_count: 0,
@@ -78,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       name: 'enso-rainfall-dynamics',
-      description: 'Spatial interpolation pipeline and ENSO sensitivity index calculation for Indian monsoon datasets.',
+      description: 'Spatial interpolation and ENSO sensitivity analysis on IMD monsoon rainfall datasets.',
       language: 'Python',
       stargazers_count: 0,
       forks_count: 0,
@@ -87,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       name: 'math-club-treasure-hunt-bot',
-      description: 'Automated verification bot and closed-loop game mechanics engine built for IISER Pune Maths Club.',
+      description: 'Discord bot for clue verification and progress tracking in campus treasure hunts.',
       language: 'JavaScript',
       stargazers_count: 0,
       forks_count: 0,
@@ -120,11 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </h3>
             <span class="text-muted font-mono" style="font-size:0.75rem;">&nearr;</span>
           </div>
-          <p class="repo-desc">${item.description || 'Numerical modelling routines and computational mathematics.'}</p>
+          <p class="repo-desc">${item.description || 'Student project repository and code.'}</p>
         </div>
         <div class="repo-meta">
           <span class="lang-badge">
-            <span class="lang-dot ${langClass}"></span>
             ${item.language || 'Code'}
           </span>
           <span>&#9733; ${item.stargazers_count || 0}</span>
