@@ -58,22 +58,41 @@ if (l96Canvas) {
   }
 
   let showHov = true;
+  function isLightMode() {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  }
+
   function updateHovmoller() {
     if (!hovCtx || !showHov) return;
     hovCtx.drawImage(hovCanvas, 0, 0, width, height - 2, 0, 2, width, height - 2);
 
     const cellW = width / K;
+    const light = isLightMode();
     for (let k = 0; k < K; k++) {
       const val = X[k];
       const anomaly = (val - F) / 4.0;
-      let r = 8, g = 12, b = 24;
+      let r, g, b;
 
-      if (anomaly > 0) {
-        g = Math.min(220, 12 + anomaly * 190);
-        b = Math.min(240, 24 + anomaly * 210);
+      if (light) {
+        if (anomaly > 0) {
+          r = Math.max(76, 223 - anomaly * 140);
+          g = Math.max(61, 208 - anomaly * 140);
+          b = Math.max(25, 188 - anomaly * 150);
+        } else {
+          r = Math.max(53, 223 + anomaly * 160);
+          g = Math.max(64, 208 + anomaly * 135);
+          b = Math.max(36, 188 + anomaly * 145);
+        }
       } else {
-        r = Math.min(180, 8 - anomaly * 150);
-        b = Math.min(220, 24 - anomaly * 170);
+        if (anomaly > 0) {
+          r = Math.min(207, 18 + anomaly * 180);
+          g = Math.min(187, 23 + anomaly * 160);
+          b = Math.min(153, 15 + anomaly * 130);
+        } else {
+          r = Math.min(136, 18 - anomaly * 110);
+          g = Math.min(144, 23 - anomaly * 120);
+          b = Math.min(99, 15 - anomaly * 80);
+        }
       }
       hovCtx.fillStyle = `rgb(${r|0}, ${g|0}, ${b|0})`;
       hovCtx.fillRect(k * cellW, 0, cellW + 1, 2);
@@ -86,17 +105,24 @@ if (l96Canvas) {
     const cx = width * 0.5;
     const cy = height * 0.5;
     const baseRadius = Math.min(width, height) * 0.32;
+    const light = isLightMode();
 
     ctx.beginPath();
     ctx.arc(cx, cy, baseRadius, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+    ctx.strokeStyle = light ? 'rgba(207, 187, 153, 0.9)' : 'rgba(207, 187, 153, 0.25)';
     ctx.lineWidth = 1;
     ctx.stroke();
 
     const gradient = ctx.createLinearGradient(cx - baseRadius, cy, cx + baseRadius, cy);
-    gradient.addColorStop(0, '#10b981');
-    gradient.addColorStop(0.5, '#06b6d4');
-    gradient.addColorStop(1, '#8b5cf6');
+    if (light) {
+      gradient.addColorStop(0, '#4C3D19');
+      gradient.addColorStop(0.5, '#889063');
+      gradient.addColorStop(1, '#354024');
+    } else {
+      gradient.addColorStop(0, '#CFBB99');
+      gradient.addColorStop(0.5, '#889063');
+      gradient.addColorStop(1, '#E5D7C4');
+    }
 
     ctx.beginPath();
     for (let k = 0; k <= K; k++) {
@@ -122,7 +148,9 @@ if (l96Canvas) {
 
       ctx.beginPath();
       ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = (k % 2 === 0) ? '#8b5cf6' : '#10b981';
+      ctx.fillStyle = light 
+        ? ((k % 2 === 0) ? '#4C3D19' : '#354024')
+        : ((k % 2 === 0) ? '#E5D7C4' : '#889063');
       ctx.fill();
     }
   }

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum Vitae & Coursework | Sumangalam Avtar Sharma</title>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +18,7 @@
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand">
-        <span class="brand-indicator emerald"></span>
+        <span class="brand-indicator"></span>
         Sumangalam Avtar Sharma
       </a>
       <nav>
@@ -20,6 +26,10 @@
         <a href="projects.html">Research & Writeups</a>
         <a href="cv.html" class="active">CV & Coursework</a>
         <a href="index.html#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <span id="theme-toggle-label">Light</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -55,11 +65,11 @@
     <!-- Relevant Coursework Breakdown (Strictly No Grades, No CGPA) -->
     <section class="section" id="coursework">
       <div class="section-label">
-        <span class="label-indicator purple"></span>
+        <span class="label-indicator"></span>
         <span>ACADEMIC FOUNDATIONS & COURSE RECORD</span>
       </div>
       
-      <h2>Relevant Academic Coursework</h2>
+      <h2 class="section-headline">Relevant Academic Coursework</h2>
       <p class="section-summary">
         Core and advanced undergraduate coursework completed or underway at IISER Pune, relevant to 
         mathematical modelling, atmospheric dynamics, and computational data science.
@@ -132,9 +142,10 @@
     <!-- Leadership & Co-Curricular Positions -->
     <section class="section">
       <div class="section-label">
-        <span class="label-indicator emerald"></span>
+        <span class="label-indicator"></span>
         <span>LEADERSHIP & SERVICE</span>
       </div>
+      <h2 class="section-headline">Leadership & Service Roles</h2>
 
       <div class="dual-feature-grid">
         <div class="feature-card">
@@ -165,5 +176,7 @@
       <a href="index.html">Return to Overview</a>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

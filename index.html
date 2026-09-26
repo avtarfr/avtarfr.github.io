@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumangalam Avtar Sharma | Climate Dynamics & Stochastic Modelling</title>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
 </head>
@@ -13,7 +19,7 @@
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand">
-        <span class="brand-indicator emerald"></span>
+        <span class="brand-indicator"></span>
         Sumangalam Avtar Sharma
       </a>
       <nav>
@@ -21,6 +27,10 @@
         <a href="projects.html">Research & Writeups</a>
         <a href="cv.html">CV & Coursework</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <span id="theme-toggle-label">Light</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -30,7 +40,7 @@
     <section class="hero-split container">
       <div class="hero-bio-col">
         <div class="identity-badge">
-          <span class="pulse-dot emerald"></span>
+          <span class="pulse-dot"></span>
           <span>IISER Pune &bull; BS-MS Mathematics</span>
         </div>
         
@@ -38,13 +48,11 @@
         <p class="hero-tagline">Mathematical Modelling &bull; Stochastic Climate Dynamics &bull; Subgrid Closures</p>
         
         <p class="hero-text">
-          Undergraduate researcher focusing on non-linear dynamical systems, reduced-order modelling, 
-          and data-driven parameterizations. Currently studying the boundary where subgrid neural closures 
-          transition from offline accuracy to long-horizon online stability.
+          Undergraduate student at IISER Pune focusing on climate modelling systems, stochastic climate dynamics, subgrid parameterizations, and data-driven parameterizations. Currently planning to explore Bayesian Inference Methods and Data Assimilation techniques for Climate Models, with an equal interest in the mathematical foundations of the same.
         </p>
 
         <div class="hero-action-buttons">
-          <a href="projects.html" class="btn btn-emerald">Research Writeups</a>
+          <a href="projects.html" class="btn btn-accent">Research Writeups</a>
           <a href="cv.html" class="btn btn-ghost">Academic CV</a>
           <a href="#contact" class="btn btn-ghost">Get in Touch</a>
         </div>
@@ -70,29 +78,29 @@
         <div class="workbench-frame">
           <div class="workbench-header">
             <div class="workbench-title">
-              <span class="status-indicator cyan"></span>
+              <span class="status-indicator"></span>
               <span>LORENZ-96 DYNAMICAL WORKBENCH (K=40)</span>
             </div>
             <span class="badge-subtle font-mono">RK4 Integration</span>
           </div>
 
           <div class="workbench-viewport">
-            <canvas id="l96-canvas"></canvas>
-            <canvas id="hovmoller-canvas"></canvas>
+            <canvas id="l96-canvas" role="img" aria-label="Lorenz-96 dynamical system phase trajectory simulation"></canvas>
+            <canvas id="hovmoller-canvas" role="img" aria-label="Lorenz-96 Hovmöller spatio-temporal diagram overlay"></canvas>
           </div>
 
           <div class="workbench-telemetry">
             <div class="telem-item">
               <span class="telem-key">Forcing (F)</span>
-              <span class="telem-val font-mono text-cyan" id="f-val">8.0</span>
+              <span class="telem-val font-mono" id="f-val">8.0</span>
             </div>
             <div class="telem-item">
               <span class="telem-key">Total Energy (E)</span>
-              <span class="telem-val font-mono text-amber" id="energy-val">--</span>
+              <span class="telem-val font-mono" id="energy-val">--</span>
             </div>
             <div class="telem-item">
               <span class="telem-key">State Regime</span>
-              <span class="telem-val font-mono text-emerald" id="regime-val">Turbulent Wave</span>
+              <span class="telem-val font-mono" id="regime-val">Turbulent Wave</span>
             </div>
           </div>
 
@@ -102,7 +110,7 @@
               <input type="range" id="f-slider" min="2" max="16" step="0.2" value="8.0">
             </div>
             <div class="button-control-group">
-              <button id="kick-btn" class="btn-workbench">&Delta;&xi; Stochastic Shock</button>
+              <button id="kick-btn" class="btn-workbench">&Delta;&xi;&nbsp; Stochastic Shock</button>
               <button id="toggle-hov-btn" class="btn-workbench">Toggle Hovmöller</button>
             </div>
           </div>
@@ -113,14 +121,15 @@
     <!-- Core Research Cards -->
     <section class="section container">
       <div class="section-label">
-        <span class="label-indicator purple"></span>
+        <span class="label-indicator"></span>
         <span>PRIMARY RESEARCH FOCUS</span>
       </div>
+      <h2 class="section-headline">Primary Research & Modelling Projects</h2>
 
       <div class="dual-feature-grid">
-        <article class="feature-card border-purple">
+        <article class="feature-card">
           <div class="card-eyebrow">
-            <span class="pill pill-purple">Dynamical Systems</span>
+            <span class="pill">Dynamical Systems</span>
             <span class="date-tag font-mono">Aug 2026 - Present</span>
           </div>
           <h2>Lorenz-96 Subgrid Parameterization & Online Stability</h2>
@@ -135,13 +144,13 @@
               <span>Neural Closures</span>
               <span>Online Stability</span>
             </div>
-            <a href="writeups/lorenz96.html" class="link-arrow text-purple">Read Complete Deep Dive &rarr;</a>
+            <a href="writeups/lorenz96.html" class="link-arrow">Read Complete Deep Dive &rarr;</a>
           </div>
         </article>
 
-        <article class="feature-card border-cyan">
+        <article class="feature-card">
           <div class="card-eyebrow">
-            <span class="pill pill-cyan">Atmospheric Dynamics</span>
+            <span class="pill">Atmospheric Dynamics</span>
             <span class="date-tag font-mono">May 2026 - Jul 2026</span>
           </div>
           <h2>Impact of ENSO on Kharif Crop Rainfall Variability</h2>
@@ -155,7 +164,7 @@
               <span>Interpolation</span>
               <span>Monsoon Indices</span>
             </div>
-            <a href="projects.html" class="link-arrow text-cyan">View Summary & Methodology &rarr;</a>
+            <a href="projects.html" class="link-arrow">View Summary & Methodology &rarr;</a>
           </div>
         </article>
       </div>
@@ -164,24 +173,25 @@
     <!-- Professional & Platform Showcases -->
     <section class="section container">
       <div class="section-label">
-        <span class="label-indicator emerald"></span>
+        <span class="label-indicator"></span>
         <span>NETWORK & CODE PROFILES</span>
       </div>
+      <h2 class="section-headline">Computational Pipelines & Academic Profiles</h2>
 
       <div class="dual-platform-grid">
         <!-- Enhanced GitHub Showcase Card -->
-        <div class="platform-card border-violet">
+        <div class="platform-card">
           <div class="platform-card-header">
             <div class="platform-meta">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
               <div>
                 <h3>@avtarfr</h3>
-                <span class="text-muted font-mono" style="font-size: 0.8rem;">github.com/avtarfr</span>
+                <span class="text-muted font-mono platform-subtext">github.com/avtarfr</span>
               </div>
             </div>
-            <a href="https://github.com/avtarfr?tab=repositories" target="_blank" class="btn btn-sm btn-ghost">View All Repos &nearr;</a>
+            <a href="https://github.com/avtarfr?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">View All Repos &nearr;</a>
           </div>
           <p class="platform-description">
             Computational implementations of chaotic oscillators, subgrid sweeps, automated event logic, and data analysis pipelines.
@@ -203,33 +213,33 @@
         </div>
 
         <!-- Enhanced LinkedIn Showcase Card -->
-        <div class="platform-card border-cyan">
+        <div class="platform-card">
           <div class="platform-card-header">
             <div class="platform-meta">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="platform-svg" aria-hidden="true">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
               <div>
                 <h3>Sumangalam Avtar Sharma</h3>
-                <span class="text-muted font-mono" style="font-size: 0.8rem;">linkedin.com/in/avtarfr</span>
+                <span class="text-muted font-mono platform-subtext">linkedin.com/in/avtarfr</span>
               </div>
             </div>
-            <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" class="btn btn-sm btn-ghost">Profile &nearr;</a>
+            <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">Profile &nearr;</a>
           </div>
           <p class="platform-description">
             Academic milestones, research internships (ISI Kolkata, UC Berkeley REYES), and campus leadership roles.
           </p>
           <div class="platform-credentials">
             <div class="cred-item">
-              <span class="font-mono text-cyan">&bull; BS-MS Mathematics Major</span>
+              <span class="font-mono text-accent">&bull; BS-MS Mathematics Major</span>
               <span>IISER Pune</span>
             </div>
             <div class="cred-item">
-              <span class="font-mono text-cyan">&bull; Maths Club Coordinator</span>
+              <span class="font-mono text-accent">&bull; Maths Club Coordinator</span>
               <span>IISER Pune</span>
             </div>
             <div class="cred-item">
-              <span class="font-mono text-cyan">&bull; Summer Research Trainee</span>
+              <span class="font-mono text-accent">&bull; Summer Research Trainee</span>
               <span>IDEAS-TIH, ISI Kolkata</span>
             </div>
           </div>
@@ -240,9 +250,10 @@
     <!-- Dynamic GitHub Repos Showcase -->
     <section class="section container">
       <div class="section-label">
-        <span class="label-indicator amber"></span>
+        <span class="label-indicator"></span>
         <span>LATEST REPOSITORY PIPELINES</span>
       </div>
+      <h2 class="section-headline">Recent Repository Implementations</h2>
       <div id="github-repos" class="repo-grid">
         <p class="loading-state">Querying GitHub API for @avtarfr...</p>
       </div>
@@ -251,9 +262,10 @@
     <!-- Direct Email Module -->
     <section class="section container" id="contact">
       <div class="section-label">
-        <span class="label-indicator emerald"></span>
+        <span class="label-indicator"></span>
         <span>COMMUNICATION</span>
       </div>
+      <h2 class="section-headline">Direct Academic Communication</h2>
 
       <div class="contact-frame">
         <div class="contact-details">
@@ -262,7 +274,7 @@
             For inquiries regarding subgrid modelling experiments, computational code, or collaborative projects:
           </p>
           <div class="email-display-card">
-            <span class="font-mono text-emerald">sumangalam.avtarsharma@students.iiserpune.ac.in</span>
+            <span class="font-mono text-accent">sumangalam.avtarsharma@students.iiserpune.ac.in</span>
           </div>
           <div class="contact-subtext">
             <span>Response window: Within 24-48 business hours</span>
@@ -285,7 +297,7 @@
             <label for="sender-body">Message</label>
             <textarea id="sender-body" rows="4" placeholder="Your note or inquiry details..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-emerald" style="width: 100%; justify-content: center;">
+          <button type="submit" class="btn btn-accent" style="width: 100%;">
             Dispatch Message
           </button>
         </form>
@@ -297,18 +309,21 @@
     <div class="container footer-layout">
       <div>
         <p><strong>Sumangalam Avtar Sharma</strong></p>
-        <p class="text-muted" style="font-size: 0.85rem;">IISER Pune &bull; Department of Mathematics</p>
+        <p class="text-muted footer-subtext">IISER Pune &bull; Department of Mathematics</p>
       </div>
       <div class="footer-nav">
         <a href="projects.html">Research</a>
         <a href="cv.html">Curriculum Vitae</a>
-        <a href="https://github.com/avtarfr" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/avtarfr/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/avtarfr" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/avtarfr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="js/lorenz96.js"></script>
   <script src="js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </body>
 </html>
