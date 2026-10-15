@@ -6,7 +6,9 @@ description: >-
 nav: cv
 main_class: container page-wrapper
 ---
-{%- assign cv_url = '/assets/cv.pdf' | relative_url -%}
+{%- comment -%} The build-time version makes browsers fetch the new file whenever the CV is replaced. {%- endcomment -%}
+{%- assign cv_version = site.time | date: '%s' -%}
+{%- assign cv_url = '/assets/cv.pdf' | relative_url | append: '?v=' | append: cv_version -%}
 <div class="page-header page-header-split">
   <div>
     <h1 class="page-title">Curriculum Vitae</h1>
