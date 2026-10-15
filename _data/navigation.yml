@@ -1,0 +1,21 @@
+# `anchor` is used on the homepage (in-page links, highlighted on scroll);
+# `url` is used everywhere else. `page` marks the item as current on that page.
+- title: About
+  anchor: about
+  url: /#about
+- title: Projects
+  anchor: projects
+  url: /projects.html
+  page: projects
+- title: Coursework
+  anchor: coursework
+  url: /cv.html#coursework
+- title: Code
+  anchor: code
+  url: /#code
+- title: Contact
+  anchor: contact
+  url: /#contact
+- title: CV
+  url: /cv.html
+  page: cv

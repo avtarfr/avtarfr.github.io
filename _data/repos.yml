@@ -1,0 +1,38 @@
+# Shown in the Code section. Stars, language and dates below are fallbacks;
+# assets/js/main.js refreshes them from the GitHub API when the page loads.
+- name: l96_param
+  description: >-
+    Neural-network parameterizations of the two-tier Lorenz-96 model: offline
+    training, online coupling, and a training-data volume sweep for
+    long-horizon stability.
+  language: Jupyter Notebook
+  stars: 1
+  pushed: 2026-10-01
+- name: mmp-handbook
+  description: >-
+    Source and verification tooling for the Mathematical Methods Handbook, a
+    website-book of mathematical methods for physicists and applied scientists.
+  language: JavaScript
+  stars: 1
+  pushed: 2026-10-14
+- name: ENSO-Impact-Prediction-2026
+  description: >-
+    IDEAS-TIH internship project on how ENSO affects rainfall in major kharif
+    crop-growing states of India, 2000–2025: data, report, and slides.
+  language: Data &amp; report
+  stars: 0
+  pushed: 2026-07-31
+- name: Markovian-Non_Markovian
+  description: >-
+    Notebooks for generating data from, simulating, and learning Markovian and
+    non-Markovian systems.
+  language: Jupyter Notebook
+  stars: 0
+  pushed: 2026-07-16
+- name: Discord-Bot
+  description: >-
+    Discord bot that ran the Maths Club treasure hunt at IISER Pune: team
+    roles, clue verification, broadcasts, and a live leaderboard.
+  language: Python
+  stars: 0
+  pushed: 2026-03-14

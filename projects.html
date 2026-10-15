@@ -1,0 +1,67 @@
+---
+title: Projects & Writeups
+description: >-
+  Undergraduate projects by Sumangalam Avtar Sharma (IISER Pune): Lorenz-96
+  parameterization, a mathematical methods handbook, ENSO and monsoon rainfall,
+  reasoning patterns, metric spaces, and survey statistics.
+nav: projects
+math: true
+main_class: container page-wrapper
+---
+<div class="page-header">
+  <h1 class="page-title">Projects &amp; Writeups</h1>
+  <p class="page-subtitle">Undergraduate work in dynamical systems, atmospheric data, mathematical writing, and statistics, newest first.</p>
+</div>
+
+<nav aria-label="Projects on this page">
+  <ul class="project-index">
+    {%- for project in site.data.projects %}
+    <li><a href="#{{ project.id }}">{{ project.label }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>
+
+{%- for project in site.data.projects %}
+<article class="project-detail-card" id="{{ project.id }}">
+  <div class="project-card-header">
+    <ul class="tech-tags">
+      {%- for tag in project.area %}
+      <li>{{ tag }}</li>
+      {%- endfor %}
+    </ul>
+    <span class="project-card-period">{{ project.period }}</span>
+  </div>
+
+  <h2>{{ project.title }}</h2>
+
+  <p>{{ project.description }}</p>
+
+  {%- if project.equation %}
+  {% include equation.html tex=project.equation %}
+  {%- endif %}
+
+  {%- if project.bullets %}
+  <ul class="entry-bullets">
+    {%- for bullet in project.bullets %}
+    <li>{{ bullet }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  <div class="project-card-footer">
+    <ul class="tech-tags plain">
+      {%- for tool in project.tools %}
+      <li>{{ tool }}</li>
+      {%- endfor %}
+    </ul>
+    {%- if project.links %}
+    <div class="project-actions">
+      {%- for link in project.links %}
+      {%- if link.primary %}{% assign button = "btn btn-primary" %}{% else %}{% assign button = "btn btn-outline" %}{% endif %}
+      {% include link.html url=link.url label=link.label class=button %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</article>
+{%- endfor %}

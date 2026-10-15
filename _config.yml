@@ -1,0 +1,41 @@
+title: Sumangalam Avtar Sharma
+tagline: Mathematics, IISER Pune
+description: >-
+  Sumangalam Avtar Sharma, BS-MS student in Mathematics at IISER Pune. Projects
+  in dynamical systems, monsoon rainfall variability and applied statistics,
+  with coursework, writeups, code and CV.
+url: https://avtarfr.github.io
+baseurl: ""
+lang: en
+
+author:
+  name: Sumangalam Avtar Sharma
+  short: SA
+  role: BS-MS student in Mathematics
+  institute: IISER Pune
+  department: Department of Mathematics, IISER Pune
+  email: sumangalam.avtarsharma@students.iiserpune.ac.in
+  github: avtarfr
+  linkedin: avtarfr
+
+katex:
+  version: 0.16.11
+  css_sri: sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+
+  js_sri: sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg
+  autorender_sri: sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk
+
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor

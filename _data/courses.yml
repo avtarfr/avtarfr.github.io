@@ -1,0 +1,34 @@
+# Courses marked `home: true` also appear in the homepage summary.
+- group: Mathematics
+  courses:
+    - { code: MT1113, name: Calculus I }
+    - { code: MT1213, name: Calculus II }
+    - { code: MT1223, name: Linear Algebra, home: true }
+    - { code: MT2113, name: Introduction to Probability, home: true }
+    - { code: MT2133, name: Introduction to Proofs }
+    - { code: MT2213, name: Group Theory }
+    - { code: MT2223, name: Real Analysis I, home: true }
+    - { code: MT2233, name: Discrete Structures }
+    - { code: MT3124, name: Real Analysis II, home: true }
+    - { code: MT3134, name: Point Set Topology, home: true }
+- group: Physics
+  courses:
+    - { code: PH1113, name: Introductory Mechanics, home: true }
+    - { code: PH2113, name: Introductory Quantum Physics, home: true }
+    - { code: PH2123, name: Mathematical Methods for Physics, home: true }
+    - { code: PH2213, name: Classical Mechanics, home: true }
+    - { code: PH2223, name: Thermal &amp; Statistical Physics, home: true }
+- group: Computing &amp; Data Science
+  courses:
+    - { code: TD1113, name: Introduction to Computing, home: true }
+    - { code: TD2223, name: Data Analysis, home: true }
+    - { code: DS4144, name: Deep Learning, home: true }
+    - { code: DS4233, name: Time Series Analysis, home: true }
+    - { code: DS4244, name: Bayesian Theory and Practice, home: true }
+- group: Climate &amp; Earth Sciences
+  courses:
+    - { code: EC1213, name: Evolution of Earth and Life, home: true }
+    - { code: EC1223, name: The Solid Earth, home: true }
+    - { code: EC2113, name: Introduction to Climate Science, home: true }
+    - { code: EC2213, name: Principles of Planetary Climate, home: true }
+    - { code: EC3124, name: Physics of the Atmosphere, home: true }

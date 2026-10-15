@@ -1,0 +1,220 @@
+---
+math: true
+---
+{%- assign author = site.author -%}
+<section class="hero-section" id="about">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 class="hero-name">{{ author.name }}</h1>
+      <p class="hero-role">{{ author.role }} · {{ author.institute }}</p>
+
+      <p class="hero-bio">
+        I am an undergraduate in the BS-MS dual degree program at the Indian Institute of Science Education and Research (IISER), Pune, studying mathematics. My interests include dynamical systems, atmospheric variability, and applied statistics. Here you will find my coursework, student projects, writeups, and code.
+      </p>
+
+      <ul class="hero-links">
+        <li><a href="mailto:{{ author.email }}">{% include icon.html name="mail" %} Email</a></li>
+        <li><a href="{{ '/cv.html' | relative_url }}">{% include icon.html name="file" %} CV</a></li>
+        <li><a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer">{% include icon.html name="github" %} GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}/" target="_blank" rel="noopener noreferrer">{% include icon.html name="linkedin" %} LinkedIn</a></li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects &amp; writeups <span class="arrow" aria-hidden="true">&darr;</span></a>
+        <a href="{{ '/cv.html' | relative_url }}" class="btn btn-outline">Coursework &amp; CV <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+
+    <figure class="hero-photo">
+      <picture>
+        <source media="(max-width: 760px)" srcset="{{ '/assets/img/avatar.jpg' | relative_url }}" width="320" height="320">
+        <img src="{{ '/assets/img/portrait.jpg' | relative_url }}" width="640" height="800" alt="Portrait of {{ author.name }}" fetchpriority="high">
+      </picture>
+      <figcaption>{% include icon.html name="pin" class="icon" %} {{ author.department }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section-alt" id="interests">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-headline">Academic Interests</h2>
+      <p class="section-subtitle">The main areas of my coursework and computational work as an undergraduate at IISER Pune.</p>
+    </div>
+
+    <div class="interests-grid">
+      {%- for interest in site.data.interests %}
+      <article class="interest-card">
+        <span class="interest-num" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3 class="interest-title">{{ interest.title }}</h3>
+        <p class="interest-desc">{{ interest.text }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="works-split">
+      <div class="works-sidebar">
+        <h2 class="section-headline">Projects &amp; Writeups</h2>
+        <p class="section-subtitle">Undergraduate work in dynamical systems, atmospheric data, mathematical writing, and statistics.</p>
+        <div class="works-count">
+          <strong>{{ site.data.projects | size }}</strong>
+          <span>projects in the full catalog,<br>2025 to present</span>
+        </div>
+        <a href="{{ '/projects.html' | relative_url }}" class="btn btn-outline btn-sm">Full project catalog <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="works-list">
+        {%- assign featured = site.data.projects | where: "featured", true %}
+        {%- for project in featured %}
+        {%- assign details_url = '/projects.html#' | append: project.id %}
+        {%- assign title_url = details_url %}
+        {%- for link in project.links %}
+          {%- unless link.url contains "://" %}{% assign title_url = link.url %}{% endunless %}
+        {%- endfor %}
+        <article class="work-item">
+          <div class="work-header">
+            <span class="work-tag">{{ project.area | join: " · " }}</span>
+            <span class="work-period">{{ project.period }}</span>
+          </div>
+          <h3 class="work-title"><a href="{{ title_url | relative_url }}">{{ project.home_title | default: project.title }}</a></h3>
+          <p class="work-desc">{{ project.summary }}</p>
+          {%- if project.equation %}
+          {% include equation.html tex=project.equation %}
+          {%- endif %}
+          <div class="work-actions">
+            {%- if title_url == details_url %}
+            {% include link.html url=details_url label="Project details" class="work-action-link" %}
+            {%- endif %}
+            {%- for link in project.links %}
+            {% include link.html url=link.url label=link.label class="work-action-link" %}
+            {%- endfor %}
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="coursework">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-headline">Relevant Coursework</h2>
+      <p class="section-subtitle">Courses completed or underway at IISER Pune in mathematics, physics, computing, and the earth sciences.</p>
+    </div>
+
+    <div class="coursework-quad-grid">
+      {%- for group in site.data.courses %}
+      <div class="course-panel">
+        <div class="course-panel-header">
+          <h3>{{ group.group }}</h3>
+        </div>
+        <ul class="course-entries">
+          {%- assign shown = group.courses | where: "home", true %}
+          {%- for course in shown %}
+          <li><span class="code">{{ course.code }}</span> {{ course.name }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+
+    <div class="section-foot">
+      <a href="{{ '/cv.html#coursework' | relative_url }}" class="btn btn-outline btn-sm">Full course list &amp; CV <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="code">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-headline">Code &amp; Repositories</h2>
+      <p class="section-subtitle">Selected repositories on GitHub. Star counts and dates update from GitHub when the page loads.</p>
+    </div>
+
+    <div class="repo-grid" id="github-repos" data-user="{{ author.github }}">
+      {%- for repo in site.data.repos %}
+      <article class="repo-card" data-repo="{{ repo.name }}">
+        <div class="repo-head">
+          <h3 class="repo-title"><a href="https://github.com/{{ author.github }}/{{ repo.name }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a></h3>
+          <span class="repo-arrow" aria-hidden="true">&nearr;</span>
+        </div>
+        <p class="repo-desc">{{ repo.description }}</p>
+        <div class="repo-meta">
+          <span class="lang-badge"><span class="lang-dot" aria-hidden="true"></span><span data-field="language">{{ repo.language }}</span></span>
+          <span>&#9733; <span data-field="stars">{{ repo.stars }}</span><span class="visually-hidden"> stars</span></span>
+          <time class="repo-updated" data-field="updated" datetime="{{ repo.pushed | date: '%Y-%m-%d' }}">{{ repo.pushed | date: "%b %Y" }}</time>
+        </div>
+      </article>
+      {%- endfor %}
+
+      <article class="repo-card">
+        <div class="repo-head">
+          <h3 class="repo-title"><a href="https://github.com/{{ author.github }}?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories</a></h3>
+          <span class="repo-arrow" aria-hidden="true">&nearr;</span>
+        </div>
+        <p class="repo-desc">Everything else, including this website's source and my Linux dotfiles, is on my GitHub profile.</p>
+        <div class="repo-meta">
+          <span>github.com/{{ author.github }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-headline">Contact</h2>
+      <p class="section-subtitle">Feel free to reach out about coursework, code, or student projects. Email is the best way to reach me.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div>
+          <p class="contact-address-title">Institutional address</p>
+          <address class="contact-address-text">
+            Department of Mathematics<br>
+            Indian Institute of Science Education and Research (IISER), Pune<br>
+            Dr. Homi Bhabha Road, Pashan, Pune 411008, Maharashtra, India
+          </address>
+          {%- assign email_parts = author.email | split: "@" %}
+          <div class="email-box">
+            <a href="mailto:{{ author.email }}">{{ email_parts[0] }}@<wbr>{{ email_parts[1] }}</a>
+            <button class="copy-btn" type="button" data-copy="{{ author.email }}" aria-label="Copy email address">Copy</button>
+          </div>
+        </div>
+        <div class="contact-footer-links">
+          {%- capture github_url %}https://github.com/{{ author.github }}{% endcapture %}
+          {%- capture linkedin_url %}https://www.linkedin.com/in/{{ author.linkedin }}/{% endcapture %}
+          {% include link.html url=github_url label="GitHub" %}
+          {% include link.html url=linkedin_url label="LinkedIn" %}
+          {% include link.html url="/cv.html" label="Curriculum vitae" %}
+        </div>
+      </div>
+
+      <form id="quick-mail-form" class="contact-form" data-email="{{ author.email }}" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="sender-name">Name</label>
+            <input type="text" id="sender-name" name="sender-name" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="sender-subject">Subject</label>
+            <input type="text" id="sender-subject" name="sender-subject" placeholder="Topic or course" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="sender-body">Message</label>
+          <textarea id="sender-body" name="sender-body" rows="5" placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Compose email</button>
+        <p class="form-note">Opens your email app with this message filled in. Nothing is sent from this page.</p>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-layout">
+    <div class="footer-meta">
+      <span>{{ site.author.name }} · {{ site.author.institute }}</span>
+      <small>Last updated {{ site.time | date: "%B %Y" }}</small>
+    </div>
+    <ul class="footer-links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+      <li><a href="{{ '/cv.html' | relative_url }}">Coursework &amp; CV</a></li>
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a></li>
+    </ul>
+  </div>
+</footer>

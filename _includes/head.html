@@ -1,0 +1,49 @@
+{%- if page.title -%}
+  {%- assign page_title = page.title | append: " · " | append: site.title -%}
+{%- else -%}
+  {%- assign page_title = site.title | append: " · " | append: site.tagline -%}
+{%- endif -%}
+{%- assign page_description = page.description | default: site.description | strip_newlines -%}
+{%- assign version = site.time | date: "%s" -%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title | escape }}</title>
+<meta name="description" content="{{ page_description | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- else %}
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/og-image.jpg' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.author.name }}, {{ site.author.role }}, {{ site.author.institute }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- endif %}
+<meta name="theme-color" content="#151913">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<script>
+  (function () {
+    var t = 'dark';
+    try { var s = localStorage.getItem('theme'); if (s === 'light' || s === 'dark') t = s; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ version }}">
+{%- if page.math %}
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ site.katex.version }}/dist/katex.min.css" integrity="{{ site.katex.css_sri }}" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ site.katex.version }}/dist/katex.min.js" integrity="{{ site.katex.js_sri }}" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ site.katex.version }}/dist/contrib/auto-render.min.js" integrity="{{ site.katex.autorender_sri }}" crossorigin="anonymous"></script>
+{%- endif %}
+<script defer src="{{ '/assets/js/main.js' | relative_url }}?v={{ version }}"></script>

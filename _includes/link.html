@@ -1,0 +1,7 @@
+{%- comment -%}
+  A link with a trailing arrow: ↗ and a new tab for external URLs, → otherwise.
+  Params: url, label, class (optional)
+{%- endcomment -%}
+{%- assign external = false -%}
+{%- if include.url contains "://" -%}{%- assign external = true -%}{%- endif -%}
+<a href="{% if external %}{{ include.url }}{% else %}{{ include.url | relative_url }}{% endif %}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.label }} {% if external %}<span class="arrow arrow-ne" aria-hidden="true">&nearr;</span>{% else %}<span class="arrow" aria-hidden="true">&rarr;</span>{% endif %}</a>

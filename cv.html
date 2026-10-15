@@ -1,0 +1,72 @@
+---
+title: Coursework & CV
+description: >-
+  Curriculum vitae and undergraduate coursework of Sumangalam Avtar Sharma,
+  BS-MS student in Mathematics at IISER Pune.
+nav: cv
+main_class: container page-wrapper
+---
+{%- assign cv_url = '/assets/cv.pdf' | relative_url -%}
+<div class="page-header page-header-split">
+  <div>
+    <h1 class="page-title">Curriculum Vitae</h1>
+    <p class="page-subtitle">BS-MS, {{ site.author.department }}</p>
+  </div>
+  <div class="page-header-actions">
+    <a href="{{ cv_url }}" target="_blank" rel="noopener" class="btn btn-primary">Open PDF <span class="arrow arrow-ne" aria-hidden="true">&nearr;</span></a>
+    <a href="{{ cv_url }}" download="Sumangalam_Avtar_Sharma_CV.pdf" class="btn btn-outline">Download PDF</a>
+  </div>
+</div>
+
+<section class="pdf-viewer-module" aria-label="CV preview">
+  <div class="pdf-module-header">
+    <span>Sumangalam_Avtar_Sharma_CV.pdf</span>
+    <span>2 pages</span>
+  </div>
+  <object data="{{ cv_url }}#view=FitH" type="application/pdf" class="pdf-frame" title="CV preview (PDF)">
+    <div class="pdf-fallback-box">
+      <p>Your browser can't show the PDF inline.</p>
+      <a href="{{ cv_url }}" class="btn btn-primary">Open the CV (PDF)</a>
+    </div>
+  </object>
+</section>
+
+<section class="cv-section" id="coursework">
+  <div class="section-head">
+    <h2 class="section-headline">Relevant Coursework</h2>
+    <p class="section-subtitle">Courses completed or underway at IISER Pune in mathematics, physics, computing, and the earth sciences.</p>
+  </div>
+
+  <div class="coursework-quad-grid">
+    {%- for group in site.data.courses %}
+    <div class="course-panel">
+      <div class="course-panel-header">
+        <h3>{{ group.group }}</h3>
+        <span class="count">{{ group.courses | size }} courses</span>
+      </div>
+      <ul class="course-entries">
+        {%- for course in group.courses %}
+        <li><span class="code">{{ course.code }}</span> {{ course.name }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="cv-section" id="activities">
+  <div class="section-head">
+    <h2 class="section-headline">Activities &amp; Service</h2>
+    <p class="section-subtitle">Student clubs, problem-setting, and outreach at IISER Pune.</p>
+  </div>
+
+  <div class="dual-feature-grid">
+    {%- for activity in site.data.activities %}
+    <div class="service-card">
+      <h3>{{ activity.title }}</h3>
+      <p class="service-meta">{{ activity.period }}</p>
+      <p>{{ activity.text }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+- title: Dynamical Systems &amp; Chaos
+  text: >-
+    Nonlinear differential equations, single- and two-tier Lorenz-96 systems,
+    RK4 integration, and the online numerical stability of data-driven subgrid
+    closures.
+- title: Atmospheric &amp; Climate Variability
+  text: >-
+    Indian monsoon rainfall, regional ENSO sensitivity, and spatial
+    interpolation of multi-decadal gridded precipitation data.
+- title: Applied Statistics &amp; ML
+  text: >-
+    Bayesian estimation, time series analysis, regression, and hypothesis
+    testing, applied to physical models and survey data.

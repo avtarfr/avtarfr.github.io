@@ -1,0 +1,150 @@
+# Single source for the homepage project list and projects.html (newest first).
+#
+#   featured     shown on the homepage
+#   home_title   shorter title for the homepage (falls back to title)
+#   summary      homepage blurb; description + bullets are used on projects.html
+#   equation     LaTeX, rendered with KaTeX and offered as "Copy LaTeX"
+#   links        `primary: true` styles the button as the main action
+#
+# Text fields are HTML: write & as &amp;. Inline math uses $...$.
+
+- id: lorenz96
+  title: Parameterization of Lorenz-96 and Testing Online Stability Against Training Data Volume
+  home_title: Lorenz-96 Subgrid Parameterization &amp; Online Stability
+  label: Lorenz-96
+  featured: true
+  area: [Dynamical Systems, Independent Study]
+  period: Aug 2026 – Present
+  summary: >-
+    How much training data does a neural network need to parameterize the
+    unresolved subgrid coupling $U_k$ without drift or blow-up when it is
+    integrated online in the reduced Lorenz-96 model?
+  description: >-
+    How much training data does a neural network need to parameterize the
+    unresolved subgrid coupling $U_k$ without drift or instability when it is
+    integrated online in the reduced (slow-variable only) Lorenz-96 model, as
+    opposed to merely being accurate offline?
+  equation: '\frac{dX_k}{dt} = -X_{k-1}(X_{k-2} - X_{k+1}) - X_k + F - \hat{U}_k(X)'
+  bullets:
+    - >-
+      Replicated the <a href="https://m2lines.github.io/L96_demo/intro.html" target="_blank" rel="noopener noreferrer">M²LInES
+      Lorenz-96 notebooks</a>: the two-tier baseline, offline training, and
+      online coupling.
+    - >-
+      Running a data-volume sweep across 10 training-data volumes for two
+      models with different activation functions, 20 models in all.
+    - Comparing offline fit ($R^2$, MSE) against long-horizon online stability for each model.
+  tools: [Lorenz-96, Subgrid closures, RK4, PyTorch]
+  links:
+    - { label: Read the writeup, url: /writeups/lorenz96.html, primary: true }
+    - { label: GitHub repository, url: "https://github.com/avtarfr/l96_param" }
+
+- id: mmp-handbook
+  title: Mathematical Methods Handbook
+  label: Methods Handbook
+  featured: true
+  area: [Mathematical Writing, Open Source]
+  period: Oct 2026 – Present
+  summary: >-
+    A website-book of the mathematics physicists and applied scientists use,
+    split into small units you can read on their own, select, and download as a
+    PDF. Written from 19 textbooks, with every block labeled and checked
+    against its sources.
+  description: >-
+    A website-book of the mathematics physicists and applied scientists use.
+    It is split into small units you can read on their own, select, and
+    download as a PDF.
+  bullets:
+    - >-
+      Written from a library of 19 textbooks, with Arfken, Weber &amp; Harris,
+      <em>Mathematical Methods for Physicists</em> (7th ed.) as the spine.
+    - >-
+      Every block of every unit is labeled Original, Adapted (with the book
+      and pages it follows), or Quoted.
+    - Software checks each unit against the full text of the source books before it is published.
+  tools: [JavaScript, LaTeX, Playwright]
+  links:
+    - { label: Open the handbook, url: "https://avtarfr.github.io/mmp-handbook/", primary: true }
+    - { label: GitHub repository, url: "https://github.com/avtarfr/mmp-handbook" }
+
+- id: enso
+  title: Impact of ENSO on Rainfall Variability Across Major Kharif Crop Growing States
+  home_title: Impact of ENSO on Kharif Crop Rainfall Variability
+  label: ENSO &amp; Rainfall
+  featured: true
+  area: [Monsoon Dynamics, "IDEAS-TIH, ISI Kolkata"]
+  period: May 2026 – Jul 2026
+  summary: >-
+    Summer project with IDEAS-TIH, ISI Kolkata: an interpolation pipeline that
+    raises the resolution of IMD gridded rainfall data, and ENSO sensitivity
+    indices across major kharif crop-growing states.
+  description: >-
+    Research project and training program with IDEAS-TIH, ISI Kolkata. I
+    built an interpolation method to obtain higher-resolution rainfall data
+    than the IMD portal provides, automated the per-state workflow, and
+    classified rainfall variability using ENSO sensitivity indices.
+  equation: '\text{ESI} = \frac{\bar{P}_{\text{El Niño}} - \bar{P}_{\text{La Niña}}}{\sigma_{\text{climatology}}}'
+  bullets:
+    - Carried out exploratory data analysis of IMD gridded daily rainfall data.
+    - Developed an interpolation method to obtain rainfall at a higher resolution than the IMD portal provides.
+    - Automated the Google Sheets workflow with Python and the Google Cloud APIs so the analysis runs per state.
+    - Developed a metric for rainfall variability and classified states using the ENSO Sensitivity Index and related measures.
+  tools: [IMD gridded data, Interpolation, Python, Google Cloud]
+  links:
+    - { label: GitHub repository, url: "https://github.com/avtarfr/ENSO-Impact-Prediction-2026", primary: true }
+
+- id: reasoning
+  title: Patterns of Reasoning and Factors of Growth
+  label: Patterns of Reasoning
+  featured: true
+  area: [Science Education, "ProblemSolvers Lab, IISER Pune"]
+  period: Jun 2026 – Jul 2026
+  summary: >-
+    Studied how students reason through pattern-recognition problems at IISER
+    Pune: a literature review, cleaning of participant data, and a new
+    conceptual framework for the reasoning patterns observed.
+  description: >-
+    Research project with the ProblemSolvers Lab, Department of Science
+    Education, IISER Pune, on how students reason through pattern-recognition
+    problems.
+  bullets:
+    - Reviewed earlier work on the topic.
+    - Cleaned and organized participant data over several rounds.
+    - Created a new conceptual framework for the reasoning patterns seen in pattern-recognition problems.
+    - Documented the existing rubric used to measure performance.
+  tools: [Literature review, Data cleaning, Conceptual frameworks]
+
+- id: metric-spaces
+  title: Metric Spaces
+  label: Metric Spaces
+  featured: false
+  area: [Analysis, "Reading Project, IISER Pune"]
+  period: Dec 2025 – Feb 2026
+  description: >-
+    A reading project through Mícheál Ó Searcóid's <em>Metric Spaces</em>,
+    working problems at every level of difficulty.
+  bullets:
+    - >-
+      Worked problems on coding metrics such as the Hamming and Levenshtein
+      metrics, the $p$-adic metric, and normed linear spaces.
+  tools: [Metric spaces, $p$-adic metric, Normed spaces]
+
+- id: circular-economy
+  title: Statistical Instrument on Circular Economy
+  label: Circular Economy
+  featured: true
+  area: [Applied Statistics, UC Berkeley REYES]
+  period: Jun 2025 – Oct 2025
+  summary: >-
+    With the UC Berkeley REYES mentorship program: a public survey and a
+    literature review of 300+ articles on circular economy awareness, analyzed
+    with hypothesis tests, ANOVA, and regression.
+  description: >-
+    Part of the UC Berkeley REYES mentorship program: measuring public
+    awareness of the circular economy and mapping the current research on it.
+  bullets:
+    - Ran a survey targeting more than 1,000 responses on awareness of the circular economy.
+    - Collaborated on a literature review of more than 300 articles.
+    - Analyzed qualitative and quantitative research questions from the literature review.
+    - Analyzed the survey data with hypothesis testing, ANOVA, and regression.
+  tools: [Survey design, ANOVA, Regression, R / Python]
